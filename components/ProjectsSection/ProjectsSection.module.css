@@ -1,14 +1,14 @@
 .projectsSection {
   position: relative;
   width: 100%;
-  height: 100vh;
-  padding: 100px 10%;
+  min-height: 100vh;
+  padding: 80px 10%;
   background: linear-gradient(to bottom, #050508, #0b0b12);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Atmospheric glows specific to Projects Section */

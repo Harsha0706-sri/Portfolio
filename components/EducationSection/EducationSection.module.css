@@ -2,13 +2,13 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 120px 10%;
+  padding: 80px 10%;
   background: #050508;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Atmospheric glows specific to Education Section */
