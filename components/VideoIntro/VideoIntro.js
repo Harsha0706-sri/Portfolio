@@ -10,8 +10,6 @@ const VideoIntro = () => {
   const fgVideoRef = useRef(null);
 
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const [showSoundBadge, setShowSoundBadge] = useState(true);
   const autoScrollTimerRef = useRef(null);
   const autoScrollCancelled = useRef(false);
   const removeCancelListenersRef = useRef(null);
@@ -45,34 +43,7 @@ const VideoIntro = () => {
     syncPlayback(nextState);
   };
 
-  // Sync mute/unmute click
-  const toggleMute = () => {
-    const fg = fgVideoRef.current;
-    if (fg) {
-      fg.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-    // Clicking sound badge or manually unmuting hides the sound hint badge
-    setShowSoundBadge(false);
-  };
 
-  // Sound badge click unmutes and makes sure it's playing
-  const handleSoundBadgeClick = () => {
-    const fg = fgVideoRef.current;
-    const bg = bgVideoRef.current;
-    
-    if (fg) {
-      fg.muted = false;
-      setIsMuted(false);
-    }
-    
-    if (!isPlaying) {
-      setIsPlaying(true);
-      syncPlayback(true);
-    }
-    
-    setShowSoundBadge(false);
-  };
 
   // Clicking scroll down indicator
   const handleScrollDown = () => {
@@ -94,7 +65,6 @@ const VideoIntro = () => {
 
     if (bg && fg) {
       bg.muted = true; // bg video MUST always be muted
-      fg.muted = isMuted;
 
       // Autoplay attempt
       const startAutoplay = () => {
@@ -109,10 +79,7 @@ const VideoIntro = () => {
       }
     }
 
-    // 2. Auto-hide sound badge after 6 seconds
-    const badgeTimer = setTimeout(() => {
-      setShowSoundBadge(false);
-    }, 6000);
+
 
     // 3. GSAP Entrance Animations
     const ctx = gsap.context(() => {
@@ -189,7 +156,6 @@ const VideoIntro = () => {
     }, containerRef);
 
     return () => {
-      clearTimeout(badgeTimer);
       window.removeEventListener('load', startAutoplay);
       // Clear any pending auto-scroll timer and remove interaction listeners
       if (autoScrollTimerRef.current) {
@@ -342,13 +308,6 @@ const VideoIntro = () => {
 
       {/* 5. Glassmorphism Controls Panel */}
       <div className={styles.controlsWrapper}>
-        {showSoundBadge && (
-          <button className={styles.soundBadge} onClick={handleSoundBadgeClick}>
-            <span className={styles.soundBadgeDot} />
-            TAP FOR SOUND
-          </button>
-        )}
-
         {/* Play/Pause Button */}
         <button 
           className={styles.glassBtn} 
@@ -364,25 +323,6 @@ const VideoIntro = () => {
             // Play Icon
             <svg viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
-            </svg>
-          )}
-        </button>
-
-        {/* Mute/Unmute Button */}
-        <button 
-          className={styles.glassBtn} 
-          onClick={toggleMute} 
-          aria-label={isMuted ? 'Unmute sound' : 'Mute sound'}
-        >
-          {isMuted ? (
-            // Muted Speaker Icon
-            <svg viewBox="0 0 24 24">
-              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.03c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-            </svg>
-          ) : (
-            // Active Speaker Icon
-            <svg viewBox="0 0 24 24">
-              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
             </svg>
           )}
         </button>
