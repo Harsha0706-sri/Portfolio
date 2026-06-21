@@ -5,6 +5,7 @@ import CinematicLayer from '@/components/CinematicLayer/CinematicLayer';
 import VideoIntro from '@/components/VideoIntro/VideoIntro';
 import AboutSection from '@/components/AboutSection/AboutSection';
 import SkillsSection from '@/components/SkillsSection/SkillsSection';
+import EducationSection from '@/components/EducationSection/EducationSection';
 import ProjectsSection from '@/components/ProjectsSection/ProjectsSection';
 import styles from './page.module.css';
 
@@ -44,7 +45,10 @@ export default function Home() {
       {/* 3. Standalone Animated Technical Skills Section */}
       <SkillsSection />
 
-      {/* 4. Standalone Animated Projects Section */}
+      {/* 4. Standalone Animated Education Section */}
+      <EducationSection />
+
+      {/* 5. Standalone Animated Projects Section */}
       <ProjectsSection />
     </main>
   );
