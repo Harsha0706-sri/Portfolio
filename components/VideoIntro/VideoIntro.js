@@ -61,26 +61,17 @@ const VideoIntro = () => {
     const bg = bgVideoRef.current;
     const fg = fgVideoRef.current;
 
-    console.log('VideoIntro component mounted');
+    console.log('Video mounted');
     console.log('Video source:', '/videos/intro.mp4');
 
     if (bg && fg) {
       bg.muted = true; // bg video MUST always be muted
+      fg.muted = true; // foreground video must also be muted for autoplay
 
-      const startAutoplay = () => {
-        console.log('Attempting autoplay of both video layers');
-        bg.play().catch(() => console.warn('Background video autoplay blocked'));
-        fg.play().catch((err) => console.warn('Foreground video autoplay blocked:', err));
-      };
-      
-      if (document.readyState === 'complete') {
-        startAutoplay();
-      } else {
-        window.addEventListener('load', startAutoplay);
-      }
+      console.log('Video play attempt');
+      bg.play().catch((err) => console.warn('Background video autoplay blocked:', err));
+      fg.play().catch((err) => console.warn('Foreground video autoplay blocked:', err));
     }
-
-
 
     // 3. GSAP Entrance Animations
     const ctx = gsap.context(() => {
@@ -258,13 +249,18 @@ const VideoIntro = () => {
           ref={fgVideoRef}
           className={styles.fgVideo}
           src="/videos/intro.mp4"
+          muted
           playsInline
           autoPlay
-          onPlay={handleFgPlay}
+          preload="auto"
+          onPlay={() => {
+            handleFgPlay();
+            console.log('Video playing');
+          }}
           onPause={handleFgPause}
           onEnded={handleVideoEnd}
-          onLoadedData={() => console.log('Foreground video loaded: /videos/intro.mp4')}
-          onError={(e) => console.error('Foreground video error:', e)}
+          onLoadedData={() => console.log('Video loaded')}
+          onError={(e) => console.log('Video error', e)}
         />
       </div>
 
