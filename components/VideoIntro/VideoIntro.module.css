@@ -24,12 +24,15 @@
 }
 
 .bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: blur(60px) brightness(0.4) saturate(1.4);
   opacity: 0.55;
-  transform: scale(1.1); /* Prevents blurred edges from leaking white/grey screen background */
+  transform: scale(1.05); /* Prevents blurred edges from leaking white/grey screen background */
 }
 
 /* Dark gradient overlays for high text contrast and cinematic framing */
@@ -39,39 +42,31 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(5, 5, 8, 0.2) 0%, rgba(5, 5, 8, 0.85) 80%),
-    linear-gradient(to bottom, rgba(5, 5, 8, 0.8) 0%, rgba(5, 5, 8, 0) 25%, rgba(5, 5, 8, 0) 75%, rgba(5, 5, 8, 0.95) 100%);
+  /* Dark cinematic overlay to improve text readability */
+  background: linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.25), rgba(0,0,0,0.1));
   pointer-events: none;
   z-index: 2;
 }
 
-/* Foreground Floating Video Container */
+/* Foreground video layer — full viewport (no card appearance) */
 .videoForegroundWrapper {
-  position: relative;
-  z-index: 3;
-  width: 80%;
-  max-width: 960px;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
   overflow: hidden;
-  box-shadow: 
-    0 30px 100px rgba(0, 0, 0, 0.8),
-    0 0 40px rgba(255, 140, 58, 0.15); /* warm orange glow */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: rgba(5, 5, 8, 0.6);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
-}
-
-.videoForegroundWrapper:hover {
-  transform: scale(1.01) translateY(-4px);
-  box-shadow: 
-    0 40px 120px rgba(0, 0, 0, 0.9),
-    0 0 60px rgba(255, 140, 58, 0.25);
-  border-color: rgba(255, 140, 58, 0.3);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .fgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -85,12 +80,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 4;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 80px 10%;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .mainSection {
@@ -347,7 +342,10 @@
     font-size: 4rem;
   }
   .videoForegroundWrapper {
-    width: 90%;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -358,9 +356,12 @@
     padding-top: 100px;
   }
   .videoForegroundWrapper {
-    width: 92%;
-    margin-top: 30px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    margin-top: 0;
   }
   .contentOverlay {
     padding: 40px 6%;
