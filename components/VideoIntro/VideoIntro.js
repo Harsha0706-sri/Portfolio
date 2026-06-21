@@ -76,7 +76,7 @@ const VideoIntro = () => {
 
   // Clicking scroll down indicator
   const handleScrollDown = () => {
-    const aboutSection = document.getElementById('about-section');
+    const aboutSection = document.getElementById('who-am-i');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -185,70 +185,7 @@ const VideoIntro = () => {
         '-=0.8'
       );
 
-      // After the hero intro timeline completes, auto-scroll to About section
-      tl.eventCallback('onComplete', () => {
-        console.log('Hero animation completed');
-
-        // Reset cancel flag
-        autoScrollCancelled.current = false;
-
-        // Handler that cancels the pending auto-scroll on user interaction
-        const onUserInteract = (e) => {
-          console.log('User interaction detected, cancelling auto-scroll', e.type);
-          autoScrollCancelled.current = true;
-          if (autoScrollTimerRef.current) {
-            clearTimeout(autoScrollTimerRef.current);
-            autoScrollTimerRef.current = null;
-          }
-          // remove listeners once user interacted
-          if (removeCancelListenersRef.current) {
-            removeCancelListenersRef.current();
-            removeCancelListenersRef.current = null;
-          }
-        };
-
-        // Attach passive listeners so we do not block native scrolling
-        window.addEventListener('wheel', onUserInteract, { passive: true });
-        window.addEventListener('touchstart', onUserInteract, { passive: true });
-        window.addEventListener('pointerdown', onUserInteract, { passive: true });
-        window.addEventListener('keydown', onUserInteract, { passive: true });
-
-        // Store remover for cleanup
-        removeCancelListenersRef.current = () => {
-          window.removeEventListener('wheel', onUserInteract);
-          window.removeEventListener('touchstart', onUserInteract);
-          window.removeEventListener('pointerdown', onUserInteract);
-          window.removeEventListener('keydown', onUserInteract);
-        };
-
-        // Wait 1s then perform smooth native scroll if not cancelled
-        console.log('Starting 1s timer for auto-scroll to WHO I AM');
-        autoScrollTimerRef.current = setTimeout(() => {
-          autoScrollTimerRef.current = null;
-          if (autoScrollCancelled.current) {
-            console.log('Auto-scroll cancelled before trigger');
-            if (removeCancelListenersRef.current) {
-              removeCancelListenersRef.current();
-              removeCancelListenersRef.current = null;
-            }
-            return;
-          }
-
-          const aboutSection = document.getElementById('who-am-i');
-          if (aboutSection) {
-            console.log('Auto scroll triggered — target found: who-am-i');
-            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          } else {
-            console.log('Auto scroll target not found: who-am-i');
-          }
-
-          // cleanup listeners after initiating scroll
-          if (removeCancelListenersRef.current) {
-            removeCancelListenersRef.current();
-            removeCancelListenersRef.current = null;
-          }
-        }, 1000);
-      });
+      // No auto-scroll on GSAP timeline completion — scrolling is triggered only by video end
     }, containerRef);
 
     return () => {
@@ -270,6 +207,65 @@ const VideoIntro = () => {
   // Make sure to sync status dynamically if video has paused itself due to browser sleep
   const handleFgPlay = () => setIsPlaying(true);
   const handleFgPause = () => setIsPlaying(false);
+
+  // Handle foreground video end: wait 1s then auto-scroll to WHO I AM (cancelable by user)
+  const handleVideoEnd = () => {
+    console.log('Video ended');
+
+    // Reset cancel flag
+    autoScrollCancelled.current = false;
+
+    const onUserInteract = (e) => {
+      console.log('User interaction detected during post-video delay, cancelling auto-scroll', e.type);
+      autoScrollCancelled.current = true;
+      if (autoScrollTimerRef.current) {
+        clearTimeout(autoScrollTimerRef.current);
+        autoScrollTimerRef.current = null;
+      }
+      if (removeCancelListenersRef.current) {
+        removeCancelListenersRef.current();
+        removeCancelListenersRef.current = null;
+      }
+    };
+
+    window.addEventListener('wheel', onUserInteract, { passive: true });
+    window.addEventListener('touchstart', onUserInteract, { passive: true });
+    window.addEventListener('pointerdown', onUserInteract, { passive: true });
+    window.addEventListener('keydown', onUserInteract, { passive: true });
+
+    removeCancelListenersRef.current = () => {
+      window.removeEventListener('wheel', onUserInteract);
+      window.removeEventListener('touchstart', onUserInteract);
+      window.removeEventListener('pointerdown', onUserInteract);
+      window.removeEventListener('keydown', onUserInteract);
+    };
+
+    console.log('Starting 1s timer after video end for auto-scroll to WHO I AM');
+    autoScrollTimerRef.current = setTimeout(() => {
+      autoScrollTimerRef.current = null;
+      if (autoScrollCancelled.current) {
+        console.log('Auto-scroll cancelled after video end');
+        if (removeCancelListenersRef.current) {
+          removeCancelListenersRef.current();
+          removeCancelListenersRef.current = null;
+        }
+        return;
+      }
+
+      const target = document.getElementById('who-am-i');
+      if (target) {
+        console.log('Auto scroll triggered after video end — scrolling to who-am-i');
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        console.log('Auto scroll target not found after video end: who-am-i');
+      }
+
+      if (removeCancelListenersRef.current) {
+        removeCancelListenersRef.current();
+        removeCancelListenersRef.current = null;
+      }
+    }, 1000);
+  };
 
   return (
     <div ref={containerRef} className={styles.heroContainer}>
@@ -295,11 +291,11 @@ const VideoIntro = () => {
           ref={fgVideoRef}
           className={styles.fgVideo}
           src="/videos/intro.mp4"
-          loop
           playsInline
           autoPlay
           onPlay={handleFgPlay}
           onPause={handleFgPause}
+          onEnded={handleVideoEnd}
         />
       </div>
 
