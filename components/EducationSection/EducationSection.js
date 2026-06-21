@@ -36,7 +36,7 @@ const EducationSection = () => {
     },
     {
       id: 3,
-      duration: '2011 - 2021',
+      duration: '2021',
       degree: 'CBSE 10th',
       institution: '',
       details: [
