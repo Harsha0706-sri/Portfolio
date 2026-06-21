@@ -30,16 +30,18 @@ const EducationSection = () => {
       degree: 'Intermediate (MPC)',
       institution: '',
       details: [
-        'Marks: 617 / 1000'
+        'Marks: 617 / 1000',
+        'Percentage: 61.7%'
       ]
     },
     {
       id: 3,
-      duration: '',
+      duration: '2011 - 2021',
       degree: 'CBSE 10th',
       institution: '',
       details: [
-        'CGPA: 6.51'
+        'CGPA: 6.51',
+        'Percentage: 61.85%'
       ]
     }
   ];
