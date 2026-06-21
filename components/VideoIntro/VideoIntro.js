@@ -10,7 +10,7 @@ const VideoIntro = () => {
   const bgVideoRef = useRef(null);
   const fgVideoRef = useRef(null);
 
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(false);
   const autoScrollTimerRef = useRef(null);
   const autoScrollCancelled = useRef(false);
@@ -40,9 +40,27 @@ const VideoIntro = () => {
 
   // Sync play/pause click
   const togglePlay = () => {
-    const nextState = !isPlaying;
-    setIsPlaying(nextState);
-    syncPlayback(nextState);
+    const fg = fgVideoRef.current;
+    const bg = bgVideoRef.current;
+    if (!fg || !bg) return;
+
+    if (fg.paused) {
+      console.log('Play clicked');
+      Promise.all([fg.play(), bg.play()])
+        .then(() => {
+          setIsPlaying(true);
+          console.log('Play succeeded');
+        })
+        .catch((err) => {
+          console.warn('Playback failed or interrupted:', err);
+          setIsPlaying(!fg.paused);
+        });
+    } else {
+      console.log('Pause clicked');
+      fg.pause();
+      bg.pause();
+      setIsPlaying(false);
+    }
   };
 
   // Toggle audio for the foreground video
@@ -50,16 +68,19 @@ const VideoIntro = () => {
     const fg = fgVideoRef.current;
     if (!fg) return;
 
-    const nextEnabled = !audioEnabled;
-    fg.muted = !nextEnabled;
-    fg.volume = nextEnabled ? 1 : 0;
+    const nextMuted = !fg.muted;
+    fg.muted = nextMuted;
+    fg.volume = nextMuted ? 0 : 1;
+    setAudioEnabled(!nextMuted);
 
-    if (nextEnabled) {
-      fg.play().catch((err) => console.warn('Foreground audio playback failed:', err));
+    if (nextMuted) {
+      console.log('Audio muted');
+    } else {
+      console.log('Audio enabled');
+      if (fg.paused) {
+        fg.play().catch((err) => console.warn('Foreground audio playback failed:', err));
+      }
     }
-
-    setAudioEnabled(nextEnabled);
-    console.log(nextEnabled ? 'Audio enabled for foreground video' : 'Audio muted for foreground video');
   };
 
   // Clicking scroll down indicator
@@ -271,6 +292,7 @@ const VideoIntro = () => {
       <div className={styles.contentOverlay}>
 
         <div className={styles.mainSection}>
+            <div className={styles.openWorkBadge}>OPEN TO WORK</div>
           <div className={styles.titleContainer}>
             <h1 className={styles.titleLine}>P. AKSHAY</h1>
           </div>

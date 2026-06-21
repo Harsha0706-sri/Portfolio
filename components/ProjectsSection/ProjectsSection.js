@@ -133,7 +133,7 @@ const ProjectsSection = () => {
 
             <div className={styles.projectActions}>
               <a className={`${styles.projectBtn} ${styles.githubBtn}`} href="https://github.com/reddy615/doctors-farms" target="_blank" rel="noreferrer">GitHub</a>
-              <a className={`${styles.projectBtn} ${styles.liveBtn}`} href="https://doctorsfarmnunna.in" target="_blank" rel="noreferrer">Live Demo</a>
+              <a className={`${styles.projectBtn} ${styles.liveBtn}`} href="https://doctorsfarmnunna.in" target="_blank" rel="noreferrer">Live Link</a>
             </div>
           </div>
         </div>
