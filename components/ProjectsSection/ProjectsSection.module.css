@@ -1,8 +1,8 @@
-.projectsSection {
+ .projectsSection {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 80px 10%;
+  padding: 70px 6%;
   background: linear-gradient(to bottom, #050508, #0b0b12);
   display: flex;
   justify-content: center;
@@ -37,8 +37,9 @@
 }
 
 .projectsCard {
-  width: 100%;
-  max-width: 1200px;
+  width: min(92vw, 1700px);
+  max-width: 1700px;
+  min-height: 720px;
   background: rgba(255, 255, 255, 0.015);
   backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -98,7 +99,7 @@
 
 .twoColumnGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   width: 100%;
   margin-bottom: 32px;
@@ -232,6 +233,10 @@
     height: auto;
     min-height: 100vh;
   }
+  .projectsCard {
+    width: 92vw;
+    min-height: 680px;
+  }
   .twoColumnGrid {
     grid-template-columns: 1fr;
   }
@@ -240,6 +245,10 @@
 @media (max-width: 768px) {
   .projectsSection {
     padding: 80px 4%;
+  }
+  .projectsCard {
+    width: 95vw;
+    min-height: 620px;
   }
   .projectsCard {
     padding: 32px 18px;

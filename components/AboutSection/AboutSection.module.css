@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 80px 10%;
+  padding: 70px 6%;
   background: #050508;
   display: flex;
   justify-content: center;
@@ -37,8 +37,9 @@
 }
 
 .card {
-  width: 100%;
-  max-width: 960px;
+  width: min(92vw, 1700px);
+  max-width: 1700px;
+  min-height: 720px;
   background: rgba(255, 255, 255, 0.015);
   backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -180,6 +181,8 @@
     padding: 80px 6%;
   }
   .card {
+    width: 95vw;
+    min-height: 620px;
     padding: 40px 24px;
   }
   .title {

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 80px 10%;
+  padding: 70px 6%;
   background: #050508;
   display: flex;
   justify-content: center;
@@ -37,8 +37,9 @@
 }
 
 .card {
-  width: 100%;
-  max-width: 1200px;
+  width: min(92vw, 1700px);
+  max-width: 1700px;
+  min-height: 720px;
   background: rgba(255, 255, 255, 0.015);
   backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -108,15 +109,15 @@
 
 /* Timeline Container and Entries */
 .timelineContainer {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 40px;
   width: 100%;
 }
 
 .timelineEntry {
   display: grid;
-  grid-template-columns: 150px 60px 1fr;
+  grid-template-columns: 180px 80px minmax(0, 1fr);
   gap: 30px;
   align-items: flex-start;
 }
@@ -210,6 +211,8 @@
   }
 
   .card {
+    width: 92vw;
+    min-height: 680px;
     padding: 50px;
   }
 
@@ -238,6 +241,8 @@
   }
 
   .card {
+    width: 95vw;
+    min-height: 620px;
     padding: 40px;
   }
 
