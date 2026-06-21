@@ -1,0 +1,473 @@
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #050508;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: var(--font-outfit, 'Outfit', 'Inter', sans-serif);
+}
+
+/* Dual video layers */
+.videoBackgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(60px) brightness(0.4) saturate(1.4);
+  opacity: 0.55;
+  transform: scale(1.1); /* Prevents blurred edges from leaking white/grey screen background */
+}
+
+/* Dark gradient overlays for high text contrast and cinematic framing */
+.cinematicOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(5, 5, 8, 0.2) 0%, rgba(5, 5, 8, 0.85) 80%),
+    linear-gradient(to bottom, rgba(5, 5, 8, 0.8) 0%, rgba(5, 5, 8, 0) 25%, rgba(5, 5, 8, 0) 75%, rgba(5, 5, 8, 0.95) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Foreground Floating Video Container */
+.videoForegroundWrapper {
+  position: relative;
+  z-index: 3;
+  width: 80%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 30px 100px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(255, 140, 58, 0.15); /* warm orange glow */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(5, 5, 8, 0.6);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+}
+
+.videoForegroundWrapper:hover {
+  transform: scale(1.01) translateY(-4px);
+  box-shadow: 
+    0 40px 120px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(255, 140, 58, 0.25);
+  border-color: rgba(255, 140, 58, 0.3);
+}
+
+.fgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content overlays */
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 10%;
+  pointer-events: none;
+}
+
+.mainSection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 0;
+}
+
+.titleContainer {
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.titleLine {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 30%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accentText {
+  background: linear-gradient(135deg, #ffffff 40%, #ff8c3a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 480px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-top: 8px;
+}
+
+.roleHighlight {
+  color: #ff8c3a;
+  font-weight: 400;
+}
+
+.designation {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ff8c3a; /* warm orange accent color */
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.heroBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+  max-width: 550px;
+  pointer-events: auto; /* enable interaction */
+}
+
+.heroBadge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+}
+
+.heroBadge:hover {
+  background: rgba(255, 140, 58, 0.12);
+  border-color: rgba(255, 140, 58, 0.4);
+  color: #ff8c3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 58, 0.1);
+}
+
+.heroButtons {
+  display: flex;
+  gap: 16px;
+  pointer-events: auto; /* enable clicks */
+}
+
+.primaryBtn {
+  background: #ff8c3a;
+  color: #050508;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #ff8c3a;
+  box-shadow: 0 4px 20px rgba(255, 140, 58, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primaryBtn:hover {
+  background: #ff9d54;
+  border-color: #ff9d54;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 140, 58, 0.4);
+}
+
+.primaryBtn:active {
+  transform: translateY(0);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ff8c3a;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn:active {
+  transform: translateY(0);
+}
+
+/* Glassmorphic buttons and badges */
+.controlsWrapper {
+  position: absolute;
+  bottom: 80px;
+  right: 10%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.glassBtn {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glassBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 140, 58, 0.4);
+  color: #ff8c3a;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(255, 140, 58, 0.15);
+}
+
+.glassBtn:active {
+  transform: scale(0.95);
+}
+
+.glassBtn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+/* Tap for sound animated badge */
+.soundBadge {
+  background: rgba(255, 140, 58, 0.1);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 140, 58, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #ffeaae;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    inset 0 0 10px rgba(255, 140, 58, 0.05);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: badgePulse 2s infinite ease-in-out;
+}
+
+.soundBadge:hover {
+  background: rgba(255, 140, 58, 0.18);
+  border-color: rgba(255, 140, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+.soundBadgeDot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff8c3a;
+  border-radius: 50%;
+  display: inline-block;
+  animation: dotPulse 1.5s infinite alternate;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.scrollIndicator:hover {
+  color: #ff8c3a;
+}
+
+.scrollLineContainer {
+  width: 2px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.scrollLinePulse {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 140, 58, 0), #ff8c3a 50%, rgba(255, 140, 58, 0));
+  position: absolute;
+  top: -20px;
+  animation: scrollPulse 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Keyframe animations */
+@keyframes badgePulse {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 5px rgba(255, 140, 58, 0);
+  }
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 15px rgba(255, 140, 58, 0.15);
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+    box-shadow: 0 0 0 rgba(255, 140, 58, 0);
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 140, 58, 0.8);
+  }
+}
+
+@keyframes scrollPulse {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .titleLine {
+    font-size: 4rem;
+  }
+  .videoForegroundWrapper {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    height: 100vh;
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+  .videoForegroundWrapper {
+    width: 92%;
+    margin-top: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  }
+  .contentOverlay {
+    padding: 40px 6%;
+    justify-content: flex-start;
+    height: auto;
+  }
+  .mainSection {
+    margin-top: 0;
+  }
+  .titleLine {
+    font-size: 2.8rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .designation {
+    font-size: 0.95rem;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    letter-spacing: 0.12em;
+  }
+  .heroBadges {
+    margin-bottom: 28px;
+    gap: 8px;
+    max-width: 100%;
+  }
+  .heroBadge {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+  .heroButtons {
+    gap: 12px;
+    width: 100%;
+  }
+  .primaryBtn, .secondaryBtn {
+    padding: 10px 22px;
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: center;
+  }
+  .controlsWrapper {
+    bottom: 120px;
+    right: 6%;
+  }
+  .scrollIndicator {
+    bottom: 30px;
+  }
+}

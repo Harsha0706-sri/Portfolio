@@ -1,0 +1,16 @@
+.canvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* sits between the video background and text content */
+  overflow: hidden;
+}
+
+.canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

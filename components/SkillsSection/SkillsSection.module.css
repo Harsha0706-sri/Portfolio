@@ -1,0 +1,195 @@
+.skillsSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 10%;
+  background: #050508;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  overflow: hidden;
+}
+
+/* Atmospheric glows specific to Skills Section */
+.blueGlow {
+  position: absolute;
+  top: -15%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 102, 204, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+.orangeGlow {
+  position: absolute;
+  bottom: -15%;
+  left: 15%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 58, 0.06) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(95px);
+  pointer-events: none;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 140, 58, 0.25);
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(255, 140, 58, 0.15);
+}
+
+.skillsHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+.sectionTagline {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ff8c3a;
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionTagline::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ff8c3a;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.sectionNumber {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(255, 140, 58, 0.18);
+  line-height: 0.8;
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.skillsGrid > div {
+  /* Targets individual category cards inside the grid */
+  background: rgba(255, 255, 255, 0.012);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skillsGrid > div:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 140, 58, 0.2);
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 140, 58, 0.05);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.skillTag:hover {
+  background: rgba(255, 140, 58, 0.1);
+  border-color: rgba(255, 140, 58, 0.3);
+  color: #ff8c3a;
+  transform: translateY(-1px);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 80px 6%;
+    min-height: auto;
+  }
+  .card {
+    padding: 40px 20px;
+  }
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  .sectionNumber {
+    font-size: 3rem;
+  }
+}
