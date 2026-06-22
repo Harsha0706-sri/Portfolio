@@ -154,6 +154,14 @@
   color: #ffffff;
 }
 
+.contactNote {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 0 0 0.25rem;
+  line-height: 1.75;
+  max-width: 760px;
+}
+
 @media (max-width: 768px) {
   .contactSection {
     padding: 90px 6%;

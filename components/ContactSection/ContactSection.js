@@ -74,8 +74,14 @@ const ContactSection = () => {
           <p className={styles.contactText}>
             GitHub: <a href="https://github.com/reddy615" target="_blank" rel="noreferrer" className={styles.contactLink}>github.com/reddy615</a>
           </p>
+          <p className={styles.contactNote}>
+            Showcasing my technical projects, development journey, and practical implementations in Full Stack Development, Artificial Intelligence, and Software Engineering.
+          </p>
           <p className={styles.contactText}>
             LinkedIn: <a href="https://www.linkedin.com/in/akshayreddy-polareddy-42664b399/" target="_blank" rel="noreferrer" className={styles.contactLink}>linkedin.com/in/akshayreddy-polareddy-42664b399</a>
+          </p>
+          <p className={styles.contactNote}>
+            Connect with me for networking, career opportunities, full-stack development, AI technologies, internships, technology discussions, and professional collaborations.
           </p>
 
           <div className={styles.contactActions}>
