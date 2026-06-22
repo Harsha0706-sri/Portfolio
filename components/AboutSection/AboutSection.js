@@ -68,50 +68,52 @@ const AboutSection = () => {
       <div className={styles.orangeGlow} />
 
       <div ref={cardRef} className={styles.card}>
-        {/* Section Title Header */}
-        <div ref={titleRef} className={styles.header}>
-          <div>
-            <div className={styles.tagline}>About Profile</div>
-            <h2 className={styles.title}>Who I Am</h2>
-          </div>
-          <span className={styles.sectionNumber}>01</span>
-        </div>
+        <span className={styles.sectionNumber}>01</span>
 
-        {/* Biography Content Blocks */}
-        <div ref={contentRef} className={styles.content}>
-          <p className={styles.bioText}>
-            I am P. Akshay Reddy, a B.Tech student specializing in AI Driven Languages and Technologies. I am passionate about Full Stack Development, Artificial Intelligence, and building scalable web applications.
-          </p>
-
-          <div className={styles.bioText}>
-            I have developed projects such as:
-            <ul className={styles.projectList}>
-              <li className={styles.projectItem}>Doctors Farms Resort Booking Website</li>
-              <li className={styles.projectItem}>AI Interview Preparation Platform</li>
-            </ul>
+        <div className={styles.cardMain}>
+          <div ref={titleRef} className={styles.header}>
+            <div>
+              <div className={styles.tagline}>About Profile</div>
+              <h2 className={styles.title}>Who I Am</h2>
+            </div>
           </div>
 
-          <p className={styles.bioText}>
-            My primary tech stack includes React, Node.js, Express.js, MongoDB, JavaScript, Git, and cloud deployment platforms.
-          </p>
+          <div ref={contentRef} className={styles.content}>
+            <p className={styles.bioText}>
+              I am P. Akshay Reddy, a B.Tech student specializing in AI Driven Languages and Technologies. I am passionate about Full Stack Development, Artificial Intelligence, and building scalable web applications.
+            </p>
 
-          <p className={styles.bioText}>
-            I enjoy solving real-world problems through software engineering and continuously improving my development skills.
-          </p>
-        </div>
+            <div className={styles.bioText}>
+              I have developed projects such as:
+              <ul className={styles.projectList}>
+                <li className={styles.projectItem}>Doctors Farms Resort Booking Website</li>
+                <li className={styles.projectItem}>AI Interview Preparation Platform</li>
+              </ul>
+            </div>
 
-        {/* Technology Highlights section */}
-        <div className={styles.tagsSection}>
-          <div className={styles.tagsLabel}>Core Focus Areas</div>
-          <div ref={tagsRef} className={styles.tagsList}>
-            <span className={styles.tag}>FULL STACK</span>
-            <span className={styles.tag}>REACT</span>
-            <span className={styles.tag}>NODE.JS</span>
-            <span className={styles.tag}>MONGODB</span>
-            <span className={styles.tag}>AI/ML</span>
-            <span className={styles.tag}>CLOUD</span>
+            <p className={styles.bioText}>
+              My primary tech stack includes React, Node.js, Express.js, MongoDB, JavaScript, Git, and cloud deployment platforms.
+            </p>
+
+            <p className={styles.bioText}>
+              I enjoy solving real-world problems through software engineering and continuously improving my development skills.
+            </p>
           </div>
         </div>
+
+        <aside className={styles.cardAside}>
+          <div className={styles.tagsSection}>
+            <div className={styles.tagsLabel}>Core Focus Areas</div>
+            <div ref={tagsRef} className={styles.tagsList}>
+              <span className={styles.tag}>FULL STACK</span>
+              <span className={styles.tag}>REACT</span>
+              <span className={styles.tag}>NODE.JS</span>
+              <span className={styles.tag}>MONGODB</span>
+              <span className={styles.tag}>AI/ML</span>
+              <span className={styles.tag}>CLOUD</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   );
