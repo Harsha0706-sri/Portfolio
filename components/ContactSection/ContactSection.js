@@ -16,19 +16,22 @@ const ContactSection = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: 'power3.out' },
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play reverse play reverse',
+          start: 'top top',
+          end: 'bottom top+=700',
+          scrub: 0.35,
+          pin: cardRef.current,
+          anticipatePin: 1,
           markers: false
         }
       });
 
-      tl.fromTo(cardRef.current,
-        { opacity: 0, y: 80, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 1.2 }
+      gsap.set(cardRef.current, { position: 'relative', zIndex: 10, opacity: 0.92, scale: 0.92, y: 80 });
+
+      tl.to(cardRef.current,
+        { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power1.out' },
+        0
       );
 
       tl.fromTo(titleRef.current,
@@ -53,39 +56,45 @@ const ContactSection = () => {
       <div className={styles.orangeGlow} />
 
       <div ref={cardRef} className={styles.card}>
-        <div ref={titleRef} className={styles.header}>
-          <div>
-            <div className={styles.tagline}>Get In Touch</div>
-            <h2 className={styles.title}>Contact</h2>
+        <span className={styles.sectionNumber}>06</span>
+
+        <div className={styles.cardMain}>
+          <div ref={titleRef} className={styles.header}>
+            <div>
+              <div className={styles.tagline}>Get In Touch</div>
+              <h2 className={styles.title}>Contact</h2>
+            </div>
           </div>
-          <span className={styles.sectionNumber}>06</span>
+
+          <div ref={infoRef} className={styles.contactDetails}>
+            <p className={styles.contactText}>
+              Name: <strong>P. Akshay Reddy</strong>
+            </p>
+            <p className={styles.contactText}>
+              Location: 📍 Nunna, Vijayawada, Andhra Pradesh, India
+            </p>
+            <p className={styles.contactText}>
+              Status: Available for Opportunities
+            </p>
+            <p className={styles.contactText}>
+              Email: <a href="mailto:2300090002csit@gmail.com" className={styles.contactLink}>2300090002csit@gmail.com</a>
+            </p>
+            <p className={styles.contactText}>
+              GitHub: <a href="https://github.com/reddy615" target="_blank" rel="noreferrer" className={styles.contactLink}>github.com/reddy615</a>
+            </p>
+            <p className={styles.contactText}>
+              LinkedIn: <a href="https://www.linkedin.com/in/akshayreddy-polareddy-42664b399/" target="_blank" rel="noreferrer" className={styles.contactLink}>linkedin.com/in/akshayreddy-polareddy-42664b399</a>
+            </p>
+          </div>
         </div>
 
-        <div ref={infoRef} className={styles.contactInfo}>
-          <p className={styles.contactText}>
-            Name: <strong>P. Akshay Reddy</strong>
-          </p>
-          <p className={styles.contactText}>
-            Location: 📍 Nunna, Vijayawada, Andhra Pradesh, India
-          </p>
-          <p className={styles.contactText}>
-            Status: Available for Opportunities
-          </p>
-          <p className={styles.contactText}>
-            Email: <a href="mailto:2300090002csit@gmail.com" className={styles.contactLink}>2300090002csit@gmail.com</a>
-          </p>
-          <p className={styles.contactText}>
-            GitHub: <a href="https://github.com/reddy615" target="_blank" rel="noreferrer" className={styles.contactLink}>github.com/reddy615</a>
-          </p>
-          <p className={styles.contactNote}>
-            Showcasing my technical projects, development journey, and practical implementations in Full Stack Development, Artificial Intelligence, and Software Engineering.
-          </p>
-          <p className={styles.contactText}>
-            LinkedIn: <a href="https://www.linkedin.com/in/akshayreddy-polareddy-42664b399/" target="_blank" rel="noreferrer" className={styles.contactLink}>linkedin.com/in/akshayreddy-polareddy-42664b399</a>
-          </p>
-          <p className={styles.contactNote}>
-            Connect with me for networking, career opportunities, full-stack development, AI technologies, internships, technology discussions, and professional collaborations.
-          </p>
+        <aside className={styles.cardAside}>
+          <div className={styles.highlightPanel}>
+            <div className={styles.highlightTitle}>Let’s Connect</div>
+            <p className={styles.highlightText}>
+              Reach out for full-stack, AI, or internship opportunities and collaborative software projects.
+            </p>
+          </div>
 
           <div className={styles.contactActions}>
             <a
@@ -103,7 +112,7 @@ const ContactSection = () => {
               DOWNLOAD RESUME
             </a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   );
