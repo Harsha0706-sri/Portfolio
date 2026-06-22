@@ -39,32 +39,18 @@
 .projectsCard {
   width: min(94vw, 1800px);
   max-width: 1800px;
-  height: 72vh;
-  max-height: 760px;
+  min-height: 650px;
   background: rgba(10, 10, 10, 0.55);
   backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 180, 100, 0.25);
   border-radius: 32px;
   padding: 60px 70px;
   box-shadow: 0 0 40px rgba(255, 140, 60, 0.12), 0 0 80px rgba(255, 140, 60, 0.08);
-  display: grid;
-  grid-template-columns: 60% 40%;
-  gap: 40px;
-  align-items: stretch;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
   transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-.cardMain {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.cardAside {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .projectsCard:hover {
@@ -88,17 +74,11 @@
 }
 
 .sectionNumber {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: 5rem;
-  font-weight: 900;
-  color: rgba(255, 180, 100, 0.18);
-  opacity: 0.18;
-  line-height: 0.85;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(255, 140, 58, 0.15);
+  line-height: 1;
   font-family: var(--font-outfit), sans-serif;
-  letter-spacing: -0.05em;
-  z-index: 2;
 }
 
 .sectionTagline {

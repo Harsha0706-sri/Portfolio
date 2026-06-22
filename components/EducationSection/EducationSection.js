@@ -106,17 +106,17 @@ const EducationSection = () => {
       <div className={styles.orangeGlow} />
 
       <div ref={cardRef} className={styles.card}>
-        <span ref={numberRef} className={styles.sectionNumber}>03</span>
-
-        <div className={styles.cardMain}>
-          <div className={styles.educationHeaderRow}>
-            <div>
-              <div className={styles.sectionTagline}>ABOUT • EDUCATION</div>
-              <h2 ref={titleRef} className={styles.sectionTitle}>EDUCATION</h2>
-            </div>
+        {/* Section Header Row */}
+        <div className={styles.educationHeaderRow}>
+          <div>
+            <div className={styles.sectionTagline}>ABOUT • EDUCATION</div>
+            <h2 ref={titleRef} className={styles.sectionTitle}>EDUCATION</h2>
           </div>
+          <div ref={numberRef} className={styles.sectionNumber}>03</div>
+        </div>
 
-          <div ref={timelineRef} className={styles.timelineContainer}>
+        {/* Timeline Container */}
+        <div ref={timelineRef} className={styles.timelineContainer}>
           {educationData.map((edu) => (
             <div key={edu.id} className={styles.timelineEntry}>
               {/* Left: Duration */}
@@ -146,27 +146,7 @@ const EducationSection = () => {
               </div>
             </div>
           ))}
-          </div>
         </div>
-
-        <aside className={styles.cardAside}>
-          <div className={styles.highlightPanel}>
-            <div className={styles.highlightTitle}>Education Snapshot</div>
-            <p className={styles.highlightText}>
-              Pursuing B.Tech in AI Driven Languages and Technologies with a focus on full-stack systems and applied machine learning.
-            </p>
-            <div className={styles.educationStatGroup}>
-              <div className={styles.educationStat}>
-                <span>Current CGPA</span>
-                <strong>8.07</strong>
-              </div>
-              <div className={styles.educationStat}>
-                <span>Program</span>
-                <strong>KL University</strong>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
   );

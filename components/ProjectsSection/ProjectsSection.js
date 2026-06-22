@@ -17,13 +17,7 @@ const ProjectsSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const nextSection = document.getElementById('contact-section');
-      const nextCard = nextSection?.querySelector('[class*=card]');
-
-      gsap.set(cardRef.current, { position: 'relative', zIndex: 10, opacity: 0.92, scale: 0.92, y: 80 });
-      if (nextCard) {
-        gsap.set(nextCard, { opacity: 0.92, scale: 0.92, y: 80 });
-      }
+      gsap.set(cardRef.current, { opacity: 0.92, scale: 0.92, y: 80 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -32,6 +26,7 @@ const ProjectsSection = () => {
           end: 'bottom top+=700',
           scrub: 0.35,
           pin: cardRef.current,
+          pinSpacing: false,
           anticipatePin: 1,
           markers: false
         }
@@ -55,14 +50,6 @@ const ProjectsSection = () => {
         0.3
       );
 
-      if (nextCard) {
-        tl.fromTo(nextCard,
-          { opacity: 0.92, scale: 0.92, y: 80 },
-          { opacity: 1, scale: 1, y: 0, ease: 'power1.out' },
-          0.4
-        );
-      }
-
       tl.fromTo(footerRef.current,
         { opacity: 0 },
         { opacity: 1, duration: 0.8 },
@@ -79,17 +66,17 @@ const ProjectsSection = () => {
       <div className={styles.orangeGlow} />
 
       <div ref={cardRef} className={styles.projectsCard}>
-        <span className={styles.sectionNumber}>04</span>
-
-        <div className={styles.cardMain}>
-          <div ref={titleRef} className={styles.sectionHeaderRow}>
-            <div>
-              <div className={styles.sectionTagline}>Selected Works</div>
-              <h2 className={styles.sectionTitle}>PROJECTS</h2>
-            </div>
+        {/* Section Title Header */}
+        <div ref={titleRef} className={styles.sectionHeaderRow}>
+          <div className={styles.sectionNumber}>04</div>
+          <div>
+            <div className={styles.sectionTagline}>Selected Works</div>
+            <h2 className={styles.sectionTitle}>PROJECTS</h2>
           </div>
+        </div>
 
-          <div ref={gridRef} className={styles.twoColumnGrid}>
+        {/* Project Cards Grid */}
+        <div ref={gridRef} className={styles.twoColumnGrid}>
           {/* Project 1 */}
           <div className={styles.card}>
             <div className={styles.projectImage}>
@@ -174,23 +161,14 @@ const ProjectsSection = () => {
             </div>
           </div>
         </div>
-        </div>
 
-        <aside className={styles.cardAside}>
-          <div className={styles.highlightPanel}>
-            <div className={styles.highlightTitle}>Featured Work</div>
-            <p className={styles.highlightText}>
-              AI interview prep and resort booking projects built with modern web architecture, deployment pipelines, and full-stack integration.
-            </p>
-          </div>
-
-          <footer ref={footerRef} className={styles.footer}>
-            <p>© {new Date().getFullYear()} P. AKSHAY REDDY. ALL RIGHTS RESERVED.</p>
-            <p style={{ marginTop: '6px' }}>
-              Built using <span className={styles.footerHighlight}>Next.js, Three.js, GSAP & CSS Modules</span>
-            </p>
-          </footer>
-        </aside>
+        {/* Footer inside the Projects Slide */}
+        <footer ref={footerRef} className={styles.footer}>
+          <p>© {new Date().getFullYear()} P. AKSHAY REDDY. ALL RIGHTS RESERVED.</p>
+          <p style={{ marginTop: '6px' }}>
+            Built using <span className={styles.footerHighlight}>Next.js, Three.js, GSAP & CSS Modules</span>
+          </p>
+        </footer>
       </div>
     </section>
   );

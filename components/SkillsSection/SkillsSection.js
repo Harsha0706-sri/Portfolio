@@ -67,17 +67,17 @@ const SkillsSection = () => {
       <div className={styles.orangeGlow} />
 
       <div ref={cardRef} className={styles.card}>
-        <span ref={numberRef} className={styles.sectionNumber}>02</span>
-
-        <div className={styles.cardMain}>
-          <div className={styles.skillsHeaderRow}>
-            <div>
-              <div className={styles.sectionTagline}>Expertise</div>
-              <h2 ref={titleRef} className={styles.sectionTitle}>Technical Skills</h2>
-            </div>
+        {/* Section Header Row */}
+        <div className={styles.skillsHeaderRow}>
+          <div>
+            <div className={styles.sectionTagline}>Expertise</div>
+            <h2 ref={titleRef} className={styles.sectionTitle}>Technical Skills</h2>
           </div>
+          <span ref={numberRef} className={styles.sectionNumber}>02</span>
+        </div>
 
-          <div ref={gridRef} className={styles.skillsGrid}>
+        {/* 7-Category Skills Grid */}
+        <div ref={gridRef} className={styles.skillsGrid}>
           {/* Languages */}
           <div>
             <h3 className={styles.cardTitle}>Languages</h3>
@@ -155,23 +155,6 @@ const SkillsSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-        <aside className={styles.cardAside}>
-          <div className={styles.highlightPanel}>
-            <div className={styles.highlightTitle}>Key Strengths</div>
-            <p className={styles.highlightText}>
-              Building responsive UI, backend APIs, cloud deployments, and AI-enhanced web products.
-            </p>
-            <div className={styles.highlightList}>
-              <span className={styles.skillTag}>React.js</span>
-              <span className={styles.skillTag}>Node.js</span>
-              <span className={styles.skillTag}>MongoDB</span>
-              <span className={styles.skillTag}>AI</span>
-              <span className={styles.skillTag}>Vercel</span>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
   );
