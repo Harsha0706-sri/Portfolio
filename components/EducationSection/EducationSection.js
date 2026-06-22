@@ -71,7 +71,6 @@ const EducationSection = () => {
       });
 
       gsap.set(cardRef.current, {
-        position: 'relative',
         zIndex: 10,
         transformPerspective: 2000,
       });
