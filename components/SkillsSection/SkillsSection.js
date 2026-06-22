@@ -35,16 +35,16 @@ const SkillsSection = () => {
       tl.to({}, { duration: 0.4 });
 
       tl.to(cardRef.current, {
-        opacity: 0.75,
-        scale: 0.96,
-        y: -40,
+        opacity: 0.4,
+        scale: 0.92,
+        y: -80,
         ease: 'power1.out',
       }, 0.4);
 
       if (nextCard) {
-        gsap.set(nextCard, { opacity: 0, scale: 0.96, y: 40 });
+        gsap.set(nextCard, { opacity: 0.92, scale: 0.92, y: 80 });
         tl.fromTo(nextCard,
-          { opacity: 0, scale: 0.96, y: 40 },
+          { opacity: 0.92, scale: 0.92, y: 80 },
           { opacity: 1, scale: 1, y: 0, ease: 'power1.out' },
           0.4
         );
