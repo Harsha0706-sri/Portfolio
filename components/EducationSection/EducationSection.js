@@ -65,11 +65,12 @@ const EducationSection = () => {
           end: 'bottom top+=700',
           scrub: 0.35,
           pin: cardRef.current,
-          pinSpacing: false,
           anticipatePin: 1,
           markers: false
         }
       });
+
+      gsap.set(cardRef.current, { position: 'relative', zIndex: 10 });
 
       tl.to({}, { duration: 0.4 });
 

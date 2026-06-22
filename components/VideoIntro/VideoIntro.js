@@ -141,17 +141,15 @@ const VideoIntro = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: 'bottom top+=120',
+          end: 'bottom top',
           scrub: 0.65,
-          pin: containerRef.current,
-          pinSpacing: false,
           markers: false,
         }
       });
 
       heroScrollTl.to(
         `.${styles.contentOverlay}`,
-        { y: -120, opacity: 0.18, ease: 'none' },
+        { y: -120, opacity: 0.16, ease: 'none' },
         0
       );
       heroScrollTl.to(
@@ -161,7 +159,7 @@ const VideoIntro = () => {
       );
       heroScrollTl.to(
         `.${styles.bgVideo}`,
-        { opacity: 0.32, ease: 'none' },
+        { opacity: 0.3, ease: 'none' },
         0
       );
     }, containerRef);
