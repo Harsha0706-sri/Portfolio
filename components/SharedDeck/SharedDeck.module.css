@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   width: 100%;
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 820px;
+  height: max(100vh, 820px);
   overflow: visible;
   display: block;
   pointer-events: none;

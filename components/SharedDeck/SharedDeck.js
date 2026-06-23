@@ -31,15 +31,16 @@ const SharedDeck = () => {
 
       gsap.set([about, skills, education, projects], {
         position: 'absolute',
-        top: 0,
+        top: '50%',
         left: '50%',
         x: '-50%',
         width: '100%',
         maxWidth: '1800px',
         transformOrigin: 'center center',
+        yPercent: -50,
       });
 
-      gsap.set(about, { zIndex: 40 });
+      gsap.set(about, { opacity: 1, scale: 1, filter: 'blur(0px)', y: 0, rotationX: 0, rotationY: 0, zIndex: 40 });
       gsap.set(skills, { zIndex: 30 });
       gsap.set(education, { zIndex: 20 });
       gsap.set(projects, { zIndex: 10 });
