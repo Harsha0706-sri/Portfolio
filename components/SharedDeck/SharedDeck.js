@@ -31,18 +31,32 @@ const SharedDeck = () => {
 
       gsap.set([about, skills, education, projects], {
         position: 'absolute',
-        top: '80px',
+        top: 0,
         left: '50%',
-        width: '100%',
-        maxWidth: '1800px',
+        width: 'min(94vw, 1800px)',
         transformOrigin: 'center center',
         yPercent: 0,
       });
 
       gsap.set(about, { opacity: 1, scale: 1, filter: 'blur(0px)', y: 0, rotationX: 0, rotationY: 0, zIndex: 40 });
-      gsap.set(skills, { zIndex: 30 });
-      gsap.set(education, { zIndex: 20 });
-      gsap.set(projects, { zIndex: 10 });
+      gsap.set(skills, {
+        zIndex: 30,
+        opacity: 0.9,
+        scale: 0.95,
+        y: 40
+      });
+      gsap.set(education, {
+        zIndex: 20,
+        opacity: 0.85,
+        scale: 0.90,
+        y: 80
+      });
+      gsap.set(projects, {
+        zIndex: 10,
+        opacity: 0.80,
+        scale: 0.85,
+        y: 120
+      });
 
       const pinTrigger = ScrollTrigger.create({
         trigger: '#who-am-i',
@@ -136,7 +150,10 @@ const SharedDeck = () => {
         0.2
       );
 
-      gsap.set(projects, { opacity: 0.92, scale: 0.92, y: 80 });
+      // Final visibility reset - applies after all fromTo initializations
+      gsap.set(skills, { opacity: 0.9, scale: 0.95, y: 40 });
+      gsap.set(education, { opacity: 0.85, scale: 0.90, y: 80 });
+      gsap.set(projects, { opacity: 0.80, scale: 0.85, y: 120 });
 
       return () => {
         pinTrigger.kill();

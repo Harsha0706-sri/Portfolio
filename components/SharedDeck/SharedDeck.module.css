@@ -1,9 +1,8 @@
 .sharedDeck {
-  position: sticky;
-  top: 0;
+  position: relative;
   width: 100%;
   min-height: 820px;
-  height: max(100vh, 820px);
+  height: 820px;
   overflow: visible;
   display: block;
   pointer-events: none;
@@ -11,7 +10,7 @@
 
 .sharedCard {
   position: absolute;
-  top: 80px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: min(94vw, 1800px);

@@ -44,7 +44,7 @@
   max-height: 760px;
   z-index: 9;
   position: absolute;
-  top: 80px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(8, 8, 12, 0.82);
