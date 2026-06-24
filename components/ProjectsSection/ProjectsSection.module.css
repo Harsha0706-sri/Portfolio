@@ -70,71 +70,41 @@
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 28px;
   width: 100%;
 }
 
-.projectCard {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.15fr);
-  gap: 22px;
-  padding: 20px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 180, 100, 0.14);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  min-height: 420px;
+.showcaseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,140,58,0.12);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.5), 0 0 36px rgba(255,140,58,0.06);
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s;
 }
 
-.projectMedia {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 140, 58, 0.18);
-  background:
-    radial-gradient(circle at top, rgba(255, 140, 58, 0.18), transparent 55%),
-    linear-gradient(180deg, rgba(10, 10, 16, 0.96), rgba(15, 15, 22, 0.92));
-  min-height: 100%;
+.showcaseCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.6), 0 0 64px rgba(255,140,58,0.12);
+}
+
+.screenshotWrap {
+  width: 100%;
+  height: 360px;
+  background: #07070a;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.projectMediaGlow {
-  position: absolute;
-  inset: auto -10% -18% auto;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 140, 58, 0.34), transparent 70%);
-  filter: blur(10px);
-}
-
-.projectMediaLabel {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  font-size: 0.7rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(255, 180, 100, 0.8);
-}
-
-.projectMediaScreen {
-  width: min(100%, 240px);
-  aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 140, 58, 0.16);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015)),
-    radial-gradient(circle at top, rgba(255, 140, 58, 0.16), transparent 45%),
-    #0b0b10;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 14px 24px rgba(0, 0, 0, 0.28);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 8px;
-  padding-top: 14px;
+.screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .projectImage {
@@ -161,78 +131,31 @@
   box-shadow: 0 0 10px rgba(255, 140, 58, 0.4);
 }
 
-.projectContent {
+.infoRow {
+  padding: 18px 20px 26px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 6px 4px 6px 0;
+  align-items: flex-start;
 }
 
-.projectIndex {
-  font-size: 0.8rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: rgba(255, 140, 58, 0.9);
-}
-
-.projectTitle {
-  font-size: 1.25rem;
-  line-height: 1.15;
+.showcaseTitle {
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
   margin: 0;
-  color: #ffffff;
 }
 
-.projectDescription {
-  color: rgba(255, 255, 255, 0.76);
-  line-height: 1.65;
+.showcaseDesc {
+  color: rgba(255,255,255,0.78);
   margin: 0;
-  max-width: 52ch;
-}
-
-.sectionLabel {
-  margin-top: 8px;
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #ff8c3a;
-}
-
-.stackList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.stackChip {
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255, 140, 58, 0.08);
-  border: 1px solid rgba(255, 140, 58, 0.18);
-  color: #ffbf8c;
-}
-
-.featureList {
-  margin: 0;
-  padding-left: 18px;
-  display: grid;
-  gap: 8px;
-}
-
-.featureItem {
-  color: rgba(255, 255, 255, 0.76);
   line-height: 1.45;
+  max-width: 72ch;
 }
 
-.actionRow {
+.buttonsRow {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
 .primaryButton,

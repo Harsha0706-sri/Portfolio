@@ -122,51 +122,24 @@ export default function ProjectsSection() {
 
           <div className={styles.projectsGrid}>
             {PROJECTS.map((project) => (
-              <article key={project.id} className={styles.projectCard}>
-                <div className={styles.projectMedia} aria-hidden="true">
-                  <div className={styles.projectMediaGlow}></div>
-                  <div className={styles.projectMediaLabel}>{project.accent}</div>
-                  <div className={styles.projectMediaScreen}>
-                    {project.id === 2 ? (
-                      <img
-                        src="/doctors-farms-screenshot.png"
-                        alt="Doctors Farms Resort"
-                        className={styles.projectImage}
-                      />
-                    ) : (
-                      <div className={styles.projectMediaScreenInner}>
-                        <span className={styles.projectMediaDot}></span>
-                        <span className={styles.projectMediaDot}></span>
-                        <span className={styles.projectMediaDot}></span>
-                      </div>
-                    )}
-                  </div>
+              <article key={project.id} className={styles.showcaseCard}>
+                <div className={styles.screenshotWrap}>
+                  <img
+                    src={project.id === 2 ? '/doctors-farms-screenshot.png' : '/ai-interview-screenshot.png'}
+                    alt={project.title}
+                    className={styles.screenshot}
+                  />
                 </div>
 
-                <div className={styles.projectContent}>
-                  <div className={styles.projectIndex}>0{project.id}</div>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.projectDescription}>{project.description}</p>
+                <div className={styles.infoRow}>
+                  <h3 className={styles.showcaseTitle}>{project.title}</h3>
+                  <p className={styles.showcaseDesc}>
+                    {project.id === 2
+                      ? 'Full-stack resort booking platform with modern UI, room management, inquiry handling and deployment.'
+                      : 'AI-powered interview preparation platform with mock interviews, coding assessments and personalized feedback.'}
+                  </p>
 
-                  <div className={styles.sectionLabel}>Tech Stack</div>
-                  <div className={styles.stackList}>
-                    {project.stack.map((item) => (
-                      <span key={item} className={styles.stackChip}>
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className={styles.sectionLabel}>Features</div>
-                  <ul className={styles.featureList}>
-                    {project.features.map((feature) => (
-                      <li key={feature} className={styles.featureItem}>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className={styles.actionRow}>
+                  <div className={styles.buttonsRow}>
                     <a className={styles.primaryButton} href={project.githubUrl} target="_blank" rel="noreferrer">
                       GitHub
                     </a>
