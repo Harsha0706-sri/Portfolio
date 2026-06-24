@@ -1,47 +1,15 @@
 import styles from './SkillsSection.module.css';
 
-const SKILL_GROUPS = [
-  {
-    title: 'Languages',
-    skills: ['JavaScript', 'Java', 'Python', 'HTML5', 'CSS3'],
-  },
-  {
-    title: 'Frontend',
-    skills: ['React.js', 'Next.js', 'Tailwind CSS', 'Bootstrap', 'Responsive Design'],
-  },
-  {
-    title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth'],
-  },
-  {
-    title: 'Databases',
-    skills: ['MongoDB', 'MySQL'],
-  },
-  {
-    title: 'Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Postman'],
-  },
-  {
-    title: 'Cloud & Deployment',
-    skills: ['Railway', 'Render', 'Vercel', 'Cloudflare'],
-  },
-  {
-    title: 'AI & Technologies',
-    skills: ['Generative AI', 'Prompt Engineering', 'API Integration', 'AI Interview Systems'],
-  },
+const SKILL_LABELS = [
+  'React.js',
+  'Next.js',
+  'Node.js',
+  'Express.js',
+  'MongoDB',
+  'Vercel',
+  'AI/ML',
+  'TypeScript',
 ];
-
-function SkillTags({ items }) {
-  return (
-    <div className={styles.skillsList}>
-      {items.map((item) => (
-        <span key={item} className={styles.skillTag}>
-          {item}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 export default function SkillsSection() {
   return (
@@ -59,24 +27,17 @@ export default function SkillsSection() {
             </div>
           </header>
 
-          <div className={styles.primaryContent}>
-            <h3 className={styles.cardTitle}>Key Strengths</h3>
-            <p className={styles.highlightText}>
-              Building responsive UI, backend APIs, cloud deployments, and AI-enhanced
-              web products.
-            </p>
-            <SkillTags items={['React.js', 'Node.js', 'MongoDB', 'AI', 'Vercel']} />
-          </div>
+          <p className={styles.highlightText}>
+            Practical front-end and back-end expertise for building polished web
+            applications, API-first services, and AI-ready data experiences.
+          </p>
 
-          <div className={styles.supportingContent}>
-            <div className={styles.skillsGrid}>
-              {SKILL_GROUPS.map((group) => (
-                <div key={group.title} className={styles.skillGroup}>
-                  <h3 className={styles.cardTitle}>{group.title}</h3>
-                  <SkillTags items={group.skills} />
-                </div>
-              ))}
-            </div>
+          <div className={styles.skillRow}>
+            {SKILL_LABELS.map((label) => (
+              <span key={label} className={styles.skillTag}>
+                {label}
+              </span>
+            ))}
           </div>
         </div>
       </article>

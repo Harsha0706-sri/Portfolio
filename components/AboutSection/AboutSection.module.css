@@ -13,16 +13,15 @@
   position: relative;
   width: min(94vw, 1800px);
   max-width: 1800px;
-  min-height: 560px;
+  min-height: 520px;
   background: rgba(8, 8, 12, 0.96);
   border: 1px solid rgba(255, 180, 100, 0.18);
   border-radius: 32px;
   padding: 48px 60px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 30px rgba(255, 140, 60, 0.12);
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 36px;
-  align-items: stretch;
 }
 
 .cardMain {
@@ -69,51 +68,8 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  gap: 28px;
-  max-width: 80%;
-}
-
-.aboutColumns {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.aboutText,
-.aboutDetails {
-  flex: 1 1 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.sectionMeta {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.subheading {
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-  margin: 0;
-  font-weight: 700;
-}
-
-.strengthsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.strengthItem {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.65;
-  font-size: 0.98rem;
+  gap: 24px;
+  max-width: 70%;
 }
 
 .badgeRow {
@@ -129,58 +85,7 @@
   font-weight: 400;
 }
 
-.projectList {
-  list-style: none;
-  padding-left: 0;
-  display: grid;
-  gap: 10px;
-  margin: 10px 0;
-}
 
-.projectItem {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.92);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.projectItem::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ff8c3a;
-  box-shadow: 0 0 8px #ff8c3a;
-}
-
-.tagsSection {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.tagsLabel {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 600;
-  margin: 0;
-}
-
-.tagsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
 
 .tag {
   font-size: 0.75rem;
