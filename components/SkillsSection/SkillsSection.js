@@ -59,24 +59,26 @@ export default function SkillsSection() {
             </div>
           </header>
 
-          <div className={styles.skillsGrid}>
-            {SKILL_GROUPS.map((group) => (
-              <div key={group.title} className={styles.skillGroup}>
-                <h3 className={styles.cardTitle}>{group.title}</h3>
-                <SkillTags items={group.skills} />
-              </div>
-            ))}
+          <div className={styles.primaryContent}>
+            <h3 className={styles.cardTitle}>Key Strengths</h3>
+            <p className={styles.highlightText}>
+              Building responsive UI, backend APIs, cloud deployments, and AI-enhanced
+              web products.
+            </p>
+            <SkillTags items={['React.js', 'Node.js', 'MongoDB', 'AI', 'Vercel']} />
+          </div>
+
+          <div className={styles.supportingContent}>
+            <div className={styles.skillsGrid}>
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.title} className={styles.skillGroup}>
+                  <h3 className={styles.cardTitle}>{group.title}</h3>
+                  <SkillTags items={group.skills} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        <aside className={styles.cardAside}>
-          <h3 className={styles.cardTitle}>Key Strengths</h3>
-          <p className={styles.highlightText}>
-            Building responsive UI, backend APIs, cloud deployments, and AI-enhanced web
-            products.
-          </p>
-          <SkillTags items={['React.js', 'Node.js', 'MongoDB', 'AI', 'Vercel']} />
-        </aside>
       </article>
     </section>
   );

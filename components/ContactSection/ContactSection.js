@@ -54,36 +54,36 @@ export default function ContactSection() {
               </a>
             </p>
           </div>
-        </div>
 
-        <aside className={styles.cardAside}>
-          <h3 className={styles.highlightTitle}>Let&apos;s Connect</h3>
-          <p className={styles.highlightText}>
-            Reach out for full-stack, AI, internship opportunities, or collaborative
-            software projects.
-          </p>
+          <div className={styles.supportingContent}>
+            <h3 className={styles.highlightTitle}>Let&apos;s Connect</h3>
+            <p className={styles.highlightText}>
+              Reach out for full-stack, AI, internship opportunities, or collaborative
+              software projects.
+            </p>
 
-          <div className={styles.contactActions}>
-            <a
-              href="/resume/2300090002_AkshayReddy.pdf"
-              download="2300090002_AkshayReddy.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.downloadButton}
-            >
-              <span className={styles.pdfIcon} aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2H6ZM14 3.5L18.5 8H14V3.5ZM8.5 17H7V15.5H8.5V17ZM11 17H9.5V11H11V17ZM14.5 17H13V13.5H14.5V17ZM16.5 17H15V11H16.5V17Z" />
-                </svg>
-              </span>
-              Download Resume
-            </a>
+            <div className={styles.contactActions}>
+              <a
+                href="/resume/2300090002_AkshayReddy.pdf"
+                download="2300090002_AkshayReddy.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.downloadButton}
+              >
+                <span className={styles.pdfIcon} aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M6 2C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2H6ZM14 3.5L18.5 8H14V3.5ZM8.5 17H7V15.5H8.5V17ZM11 17H9.5V11H11V17ZM14.5 17H13V13.5H14.5V17ZM16.5 17H15V11H16.5V17Z" />
+                  </svg>
+                </span>
+                Download Resume
+              </a>
+            </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
   );

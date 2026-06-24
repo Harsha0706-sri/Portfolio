@@ -71,21 +71,21 @@ export default function EducationSection() {
               </div>
             ))}
           </div>
-        </div>
 
-        <aside className={styles.cardAside}>
-          <h3 className={styles.degree}>Education Snapshot</h3>
-          <p className={styles.detailItem}>
-            Pursuing B.Tech in AI Driven Languages and Technologies with a focus on
-            full-stack systems and applied machine learning.
-          </p>
-          <p className={styles.detailItem}>
-            <strong>Current CGPA:</strong> 8.07
-          </p>
-          <p className={styles.detailItem}>
-            <strong>Program:</strong> KL University
-          </p>
-        </aside>
+          <div className={styles.supportingContent}>
+            <h3 className={styles.degree}>Education Snapshot</h3>
+            <p className={styles.detailItem}>
+              Pursuing B.Tech in AI Driven Languages and Technologies with a focus on
+              full-stack systems and applied machine learning.
+            </p>
+            <p className={styles.detailItem}>
+              <strong>Current CGPA:</strong> 8.07
+            </p>
+            <p className={styles.detailItem}>
+              <strong>Program:</strong> KL University
+            </p>
+          </div>
+        </div>
       </article>
     </section>
   );

@@ -118,20 +118,22 @@ export default function ProjectsSection() {
             </div>
           </header>
 
-          <div className={styles.twoColumnGrid}>
-            {PROJECTS.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
+          <div className={styles.primaryContent}>
+            <h3 className={styles.cardTitle}>Featured Work</h3>
+            <p className={styles.projectDescription}>
+              AI interview preparation and resort booking products built with modern web
+              architecture, deployment pipelines, and full-stack integration.
+            </p>
+          </div>
+
+          <div className={styles.supportingContent}>
+            <div className={styles.projectsList}>
+              {PROJECTS.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
           </div>
         </div>
-
-        <aside className={styles.cardAside}>
-          <h3 className={styles.cardTitle}>Featured Work</h3>
-          <p className={styles.projectDescription}>
-            AI interview preparation and resort booking products built with modern web
-            architecture, deployment pipelines, and full-stack integration.
-          </p>
-        </aside>
       </div>
     </section>
   );
