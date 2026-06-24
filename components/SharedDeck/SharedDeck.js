@@ -85,13 +85,13 @@ const SharedDeck = () => {
         rotationX: 12,
         rotationY: 3,
         y: -220,
-        filter: 'blur(14px)',
+        filter: 'blur(8px)',
         boxShadow: '0 55px 140px rgba(0,0,0,0.5)',
         ease: 'power1.out',
       }, 0);
 
       aboutTween.fromTo(skills,
-        { opacity: 0.62, scale: 0.86, rotationX: -14, rotationY: -4, y: 160, filter: 'blur(14px)' },
+        { opacity: 0.62, scale: 0.86, rotationX: -14, rotationY: -4, y: 160, filter: 'blur(8px)' },
         { opacity: 1, scale: 1, rotationX: 0, rotationY: 0, y: 0, filter: 'blur(0px)', ease: 'power1.out' },
         0.2
       );
@@ -112,13 +112,13 @@ const SharedDeck = () => {
         rotationX: 12,
         rotationY: 3,
         y: -220,
-        filter: 'blur(14px)',
+        filter: 'blur(8px)',
         boxShadow: '0 55px 140px rgba(0,0,0,0.5)',
         ease: 'power1.out',
       }, 0);
 
       skillsTween.fromTo(education,
-        { opacity: 0.62, scale: 0.86, rotationX: -14, rotationY: -4, y: 160, filter: 'blur(14px)' },
+        { opacity: 0.62, scale: 0.86, rotationX: -14, rotationY: -4, y: 160, filter: 'blur(8px)' },
         { opacity: 1, scale: 1, rotationX: 0, rotationY: 0, y: 0, filter: 'blur(0px)', ease: 'power1.out' },
         0.2
       );
@@ -139,7 +139,7 @@ const SharedDeck = () => {
         rotationX: 12,
         rotationY: 3,
         y: -220,
-        filter: 'blur(14px)',
+        filter: 'blur(8px)',
         boxShadow: '0 55px 140px rgba(0,0,0,0.5)',
         ease: 'power1.out',
       }, 0);
