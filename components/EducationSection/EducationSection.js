@@ -10,15 +10,15 @@ export default function EducationSection() {
 
         <div className={styles.cardMain}>
           <header className={styles.header}>
-            <div className={styles.tagline}>Academic Profile</div>
+            <div className={styles.tagline}>Education</div>
             <h2 id="education-title" className={styles.title}>
               Education
             </h2>
           </header>
 
           <p className={styles.bioText}>
-            Pursuing B.Tech at KL University with a strong focus on artificial intelligence,
-            modern web systems, and production-ready software architecture.
+            Pursuing B.Tech at KL University with a focus on artificial intelligence,
+            modern web systems, and production-ready engineering.
           </p>
 
           <div className={styles.badgeRow}>

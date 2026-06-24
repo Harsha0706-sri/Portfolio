@@ -15,8 +15,7 @@ export default function ContactSection() {
           </header>
 
           <p className={styles.bioText}>
-            Connect with me for web development, AI integrations, and polished product delivery.
-            I respond quickly and keep project communication clear.
+            Reach out for web development, AI integrations, and polished product launch support.
           </p>
 
           <div className={styles.badgeRow}>

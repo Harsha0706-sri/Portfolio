@@ -10,15 +10,14 @@ export default function ProjectsSection() {
 
         <div className={styles.cardMain}>
           <header className={styles.header}>
-            <div className={styles.tagline}>Selected Works</div>
+            <div className={styles.tagline}>Projects</div>
             <h2 id="projects-title" className={styles.title}>
               Projects
             </h2>
           </header>
 
           <p className={styles.bioText}>
-            I build modern web applications with polished UX, full-stack integration, and
-            deployment-ready architecture for real-world use.
+            Modern web projects built with polished UX, full-stack integration, and deployment-ready architecture.
           </p>
 
           <div className={styles.badgeRow}>

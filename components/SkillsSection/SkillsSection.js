@@ -17,8 +17,8 @@ export default function SkillsSection() {
           </header>
 
           <p className={styles.bioText}>
-            Practical front-end and back-end capabilities for polished applications,
-            API-first systems, and intelligent deployments with modern tools.
+            Modern front-end and back-end skills for polished web products, API-driven
+            systems, and deploy-ready application delivery.
           </p>
 
           <div className={styles.badgeRow}>
