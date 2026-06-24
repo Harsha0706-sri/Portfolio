@@ -18,7 +18,7 @@ const SKILL_CATEGORIES = [
   },
   {
     name: 'BACKEND',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication'],
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth'],
   },
   {
     name: 'DATABASES',
@@ -34,7 +34,7 @@ const SKILL_CATEGORIES = [
   },
   {
     name: 'AI & TECHNOLOGIES',
-    skills: ['Generative AI', 'Prompt Engineering', 'AI Interview Systems', 'API Integration'],
+    skills: ['Generative AI', 'Prompt Engineering', 'API Integration', 'AI Interview Systems'],
   },
 ];
 
