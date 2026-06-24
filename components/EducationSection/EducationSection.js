@@ -148,6 +148,7 @@ export default function EducationSection() {
                   {entry.specialization && (
                     <p className={styles.detail}>
                       <span className={styles.label}>Specialization:</span>
+                      {' '}
                       {entry.specialization}
                     </p>
                   )}
@@ -155,6 +156,7 @@ export default function EducationSection() {
                   {entry.institution && (
                     <p className={styles.detail}>
                       <span className={styles.label}>University:</span>
+                      {' '}
                       {entry.institution}
                     </p>
                   )}
@@ -162,6 +164,7 @@ export default function EducationSection() {
                   {entry.marks && (
                     <p className={styles.detail}>
                       <span className={styles.label}>Marks:</span>
+                      {' '}
                       {entry.marks}
                     </p>
                   )}
@@ -169,6 +172,7 @@ export default function EducationSection() {
                   {entry.cgpa && (
                     <p className={styles.detail}>
                       <span className={styles.label}>CGPA:</span>
+                      {' '}
                       {entry.cgpa}
                     </p>
                   )}
@@ -176,6 +180,7 @@ export default function EducationSection() {
                   {entry.percentage && (
                     <p className={styles.detail}>
                       <span className={styles.label}>Percentage:</span>
+                      {' '}
                       {entry.percentage}
                     </p>
                   )}
