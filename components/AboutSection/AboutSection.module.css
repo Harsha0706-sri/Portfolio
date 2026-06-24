@@ -13,8 +13,8 @@
   position: relative;
   width: min(96vw, 1600px);
   max-width: 1600px;
-  min-height: 520px;
-  max-height: 600px;
+  min-height: 620px;
+  max-height: 900px;
   background: rgba(8, 8, 12, 0.96);
   border: 1px solid rgba(255, 180, 100, 0.18);
   border-radius: 32px;
@@ -92,6 +92,91 @@
   color: #ffb982;
 }
 
+.introText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 400;
+  max-width: 72ch;
+  margin: 0;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ff8c3a;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.projectsSection {
+  margin: 0;
+  padding: 0;
+}
+
+.projectList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.projectList li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.projectList li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ff8c3a;
+  font-weight: bold;
+}
+
+.techStackSection {
+  margin: 0;
+  padding: 0;
+}
+
+.techList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.techItem {
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  background: rgba(255, 140, 58, 0.04);
+  border: 1px solid rgba(255, 140, 58, 0.12);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.techItem:hover {
+  background: rgba(255, 140, 58, 0.1);
+  border-color: rgba(255, 140, 58, 0.24);
+  color: #ffb982;
+}
+
+.closingText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 400;
+  max-width: 72ch;
+  margin: 0;
+}
+
 @media (max-width: 900px) {
   .aboutSection {
     min-height: auto;
@@ -110,5 +195,31 @@
 
   .bioText {
     font-size: 1rem;
+  }
+
+  .introText {
+    font-size: 1rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+
+  .projectList {
+    font-size: 0.95rem;
+  }
+
+  .techList {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .techItem {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .closingText {
+    font-size: 0.95rem;
   }
 }

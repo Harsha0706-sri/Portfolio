@@ -54,8 +54,33 @@ export default function AboutSection() {
             </h2>
           </header>
 
-          <p className={styles.bioText}>
-            I am P. Akshay Reddy, a B.Tech student specializing in AI Driven Languages and Technologies. Passionate about Full Stack Development, Artificial Intelligence, and building scalable web applications that solve real-world problems through modern technologies and innovative solutions.
+          <p className={styles.introText}>
+            I am P. Akshay Reddy, a B.Tech student specializing in AI Driven Languages and Technologies. I am passionate about Full Stack Development, Artificial Intelligence, and building scalable web applications.
+          </p>
+
+          <div className={styles.projectsSection}>
+            <h3 className={styles.subheading}>Projects</h3>
+            <ul className={styles.projectList}>
+              <li>Doctors Farms Resort Booking Website</li>
+              <li>AI Interview Preparation Platform</li>
+            </ul>
+          </div>
+
+          <div className={styles.techStackSection}>
+            <h3 className={styles.subheading}>Tech Stack</h3>
+            <div className={styles.techList}>
+              <span className={styles.techItem}>React</span>
+              <span className={styles.techItem}>Node.js</span>
+              <span className={styles.techItem}>Express.js</span>
+              <span className={styles.techItem}>MongoDB</span>
+              <span className={styles.techItem}>JavaScript</span>
+              <span className={styles.techItem}>Git</span>
+              <span className={styles.techItem}>Cloud Platforms</span>
+            </div>
+          </div>
+
+          <p className={styles.closingText}>
+            I enjoy solving real-world problems through software engineering and continuously improving my development skills.
           </p>
 
           <div className={styles.badgeRow}>
