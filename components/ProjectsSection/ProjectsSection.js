@@ -139,6 +139,15 @@ export default function ProjectsSection() {
                       : 'AI-powered interview preparation platform with mock interviews, coding assessments and personalized feedback.'}
                   </p>
 
+                  <div className={styles.techHeading}>TECH STACK</div>
+                  <div className={styles.badgeRow}>
+                    {project.stack.map((tag) => (
+                      <span key={tag} className={styles.tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                   <div className={styles.buttonsRow}>
                     <a className={styles.primaryButton} href={project.githubUrl} target="_blank" rel="noreferrer">
                       GitHub

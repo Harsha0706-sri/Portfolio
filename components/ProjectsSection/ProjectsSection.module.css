@@ -158,6 +158,32 @@
   margin-top: 6px;
 }
 
+.techHeading {
+  margin-top: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ff8c3a;
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 7px 18px;
+  background: rgba(255, 140, 58, 0.06);
+  border: 1px solid rgba(255, 140, 58, 0.18);
+  border-radius: 999px;
+  color: #ffb982;
+}
+
 .primaryButton,
 .secondaryButton {
   display: inline-flex;
