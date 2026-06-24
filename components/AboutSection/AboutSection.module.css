@@ -66,33 +66,34 @@
   margin: 0;
 }
 
-.contentGrid {
-  display: grid;
-  grid-template-columns: minmax(280px, 2fr) minmax(260px, 1.2fr);
-  gap: 36px;
-  align-items: start;
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 80%;
 }
 
-.aboutText {
-  display: grid;
-  gap: 24px;
+.aboutColumns {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.sidePanel {
-  display: grid;
-  gap: 24px;
-}
-
-.panelBlock {
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 24px;
-  padding: 22px;
-  display: grid;
+.aboutText,
+.aboutDetails {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
 }
 
-.panelTitle {
+.sectionMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subheading {
   font-size: 0.9rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -106,13 +107,19 @@
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .strengthItem {
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 0.98rem;
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .bioText {
@@ -198,12 +205,8 @@
     padding: 40px 28px;
   }
 
-  .contentGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .panelBlock {
-    padding: 18px;
+  .aboutColumns {
+    flex-direction: column;
   }
 
   .sectionNumber {

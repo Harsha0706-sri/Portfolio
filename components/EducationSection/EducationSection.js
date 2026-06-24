@@ -45,45 +45,47 @@ export default function EducationSection() {
             </div>
           </header>
 
-          <div className={styles.timelineContainer}>
-            {EDUCATION.map((education) => (
-              <div key={education.id} className={styles.timelineEntry}>
-                <div className={styles.durationColumn}>
-                  <span className={styles.duration}>{education.duration}</span>
-                </div>
-                <div className={styles.dividerColumn}>
-                  <div className={styles.dividerLine} />
-                  <div className={styles.dividerDot} />
-                </div>
-                <div className={styles.detailsColumn}>
-                  <h3 className={styles.degree}>{education.degree}</h3>
-                  {education.institution && (
-                    <p className={styles.institution}>{education.institution}</p>
-                  )}
-                  <div className={styles.details}>
-                    {education.details.map((detail) => (
-                      <p key={detail} className={styles.detailItem}>
-                        {detail}
-                      </p>
-                    ))}
+          <div className={styles.educationContent}>
+            <div className={styles.timelineContainer}>
+              {EDUCATION.map((education) => (
+                <div key={education.id} className={styles.timelineEntry}>
+                  <div className={styles.durationColumn}>
+                    <span className={styles.duration}>{education.duration}</span>
+                  </div>
+                  <div className={styles.dividerColumn}>
+                    <div className={styles.dividerLine} />
+                    <div className={styles.dividerDot} />
+                  </div>
+                  <div className={styles.detailsColumn}>
+                    <h3 className={styles.degree}>{education.degree}</h3>
+                    {education.institution && (
+                      <p className={styles.institution}>{education.institution}</p>
+                    )}
+                    <div className={styles.details}>
+                      {education.details.map((detail) => (
+                        <p key={detail} className={styles.detailItem}>
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className={styles.supportingContent}>
-            <h3 className={styles.degree}>Education Snapshot</h3>
-            <p className={styles.detailItem}>
-              Pursuing B.Tech in AI Driven Languages and Technologies with a focus on
-              full-stack systems and applied machine learning.
-            </p>
-            <p className={styles.detailItem}>
-              <strong>Current CGPA:</strong> 8.07
-            </p>
-            <p className={styles.detailItem}>
-              <strong>Program:</strong> KL University
-            </p>
+            <div className={styles.supportingContent}>
+              <h3 className={styles.degree}>Education Snapshot</h3>
+              <p className={styles.detailItem}>
+                Pursuing B.Tech in AI Driven Languages and Technologies with a focus on
+                full-stack systems and applied machine learning.
+              </p>
+              <p className={styles.detailItem}>
+                <strong>Current CGPA:</strong> 8.07
+              </p>
+              <p className={styles.detailItem}>
+                <strong>Program:</strong> KL University
+              </p>
+            </div>
           </div>
         </div>
       </article>
