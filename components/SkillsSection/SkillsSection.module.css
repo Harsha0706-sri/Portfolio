@@ -26,23 +26,27 @@
 }
 
 .cardMain {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(340px, 1.2fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.skillsHeaderRow {
+  grid-column: 1 / -1;
 }
 
 .primaryContent {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 16px;
 }
 
 .supportingContent {
   width: 100%;
   max-width: 100%;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+  padding: 0;
+  border-top: none;
 }
 
 .skillsHeaderRow {
@@ -124,7 +128,17 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+  .skillsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1000px) {
+  .cardMain {
+    grid-template-columns: 1fr;
+  }
+
   .skillsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
