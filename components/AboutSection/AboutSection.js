@@ -1,10 +1,48 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from './AboutSection.module.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ABOUT_BADGES = ['FULL STACK', 'AI/ML', 'REACT', 'NODE.JS', 'MONGODB', 'CLOUD'];
 
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: false,
+          markers: false,
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars.id === 'about-section-animation') {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
   return (
-    <section className={styles.aboutSection} id="who-am-i">
+    <section ref={sectionRef} className={styles.aboutSection} id="who-am-i">
       <article className={styles.card} aria-labelledby="about-title">
         <span className={styles.sectionNumber}>01</span>
 

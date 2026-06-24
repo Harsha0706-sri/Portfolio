@@ -1,10 +1,48 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from './EducationSection.module.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const EDUCATION_BADGES = ['B.Tech', 'CGPA 8.07', 'KL University', 'AI Technologies'];
 
 export default function EducationSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: false,
+          markers: false,
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars.id === 'education-section-animation') {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
   return (
-    <section className={styles.educationSection} id="education-section">
+    <section ref={sectionRef} className={styles.educationSection} id="education-section">
       <article className={styles.card} aria-labelledby="education-title">
         <span className={styles.sectionNumber}>03</span>
 

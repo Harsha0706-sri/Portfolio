@@ -1,10 +1,48 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from './ContactSection.module.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CONTACT_BADGES = ['GitHub', 'LinkedIn', 'Email'];
 
 export default function ContactSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'top 20%',
+          scrub: false,
+          markers: false,
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars.id === 'contact-section-animation') {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
   return (
-    <section className={styles.contactSection} id="contact-section">
+    <section ref={sectionRef} className={styles.contactSection} id="contact-section">
       <div className={styles.card}>
         <span className={styles.sectionNumber}>05</span>
 
