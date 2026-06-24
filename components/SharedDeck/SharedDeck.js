@@ -84,7 +84,7 @@ const SharedDeck = () => {
         scale: 0.88,
         rotationX: 12,
         rotationY: 3,
-        y: -220,
+        y: -120,
         filter: 'blur(8px)',
         boxShadow: '0 55px 140px rgba(0,0,0,0.5)',
         ease: 'power1.out',
