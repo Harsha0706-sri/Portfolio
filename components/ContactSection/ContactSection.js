@@ -1,5 +1,21 @@
 import styles from './ContactSection.module.css';
 
+const CONTACT_BADGES = ['Email Ready', 'Remote Friendly', 'Fast Response', 'Hireable'];
+const CONTACT_SUPPORT = [
+  {
+    label: 'Open availability',
+    description: 'I am actively available for web, AI, and full-stack opportunities.',
+  },
+  {
+    label: 'Collaborative process',
+    description: 'I work best with clear goals, thoughtful feedback, and polished delivery.',
+  },
+  {
+    label: 'Professional follow-up',
+    description: 'You can expect prompt communication and clean handoff materials.',
+  },
+];
+
 export default function ContactSection() {
   return (
     <section className={styles.contactSection} id="contact-section">
@@ -14,16 +30,35 @@ export default function ContactSection() {
             </div>
           </header>
 
+          <p className={styles.contactIntro}>
+            I am available for web development and AI project collaborations, with a focus
+            on polished, production-ready experiences and smooth delivery.
+          </p>
+
+          <div className={styles.supportBlock}>
+            {CONTACT_SUPPORT.map((item) => (
+              <div key={item.label} className={styles.detailItem}>
+                <span className={styles.detailLabel}>{item.label}</span>
+                <span className={styles.detailText}>{item.description}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.badgeRow}>
+            {CONTACT_BADGES.map((badge) => (
+              <span key={badge} className={styles.badgeItem}>
+                {badge}
+              </span>
+            ))}
+          </div>
+
           <div className={styles.contactDetails}>
             <p className={styles.contactText}>
               <strong>P. Akshay Reddy</strong>
             </p>
             <p className={styles.contactText}>Vijayawada, Andhra Pradesh, India</p>
             <p className={styles.contactText}>
-              <a
-                href="mailto:2300090002csit@gmail.com"
-                className={styles.contactLink}
-              >
+              <a href="mailto:2300090002csit@gmail.com" className={styles.contactLink}>
                 2300090002csit@gmail.com
               </a>
             </p>

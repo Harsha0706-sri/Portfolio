@@ -13,39 +13,22 @@
   position: relative;
   width: min(94vw, 1800px);
   max-width: 1800px;
-  min-height: 520px;
+  min-height: 700px;
   background: rgba(8, 8, 12, 0.98);
   border: 1px solid rgba(255, 180, 100, 0.25);
   border-radius: 32px;
-  padding: 48px 60px;
+  padding: 56px 64px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45), 0 0 30px rgba(255, 140, 60, 0.12);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
 }
 
 .cardMain {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
   max-width: 72%;
-}
-
-.educationBadgeRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.badgeItem {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 6px 14px;
-  background: rgba(255, 140, 58, 0.05);
-  border: 1px solid rgba(255, 140, 58, 0.15);
-  border-radius: 18px;
-  color: #ffb982;
 }
 
 .educationHeaderRow {
@@ -84,100 +67,57 @@
   letter-spacing: -0.05em;
 }
 
-.timelineContainer {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 34px;
-  width: 100%;
+.highlightText {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 95%;
 }
 
-.timelineEntry {
-  display: grid;
-  grid-template-columns: 150px 40px minmax(0, 1fr);
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.durationColumn {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 8px;
-}
-
-.duration {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ff8c3a;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-align: right;
-}
-
-.dividerColumn {
-  position: relative;
+.supportBlock {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 100%;
-}
-
-.dividerLine {
-  position: absolute;
-  width: 2px;
-  height: 100%;
-  background: rgba(255, 140, 58, 0.28);
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dividerDot {
-  position: relative;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #ff8c3a;
-  border: 2px solid rgba(255, 140, 58, 0.3);
-  box-shadow: 0 0 15px rgba(255, 140, 58, 0.3);
-  margin-top: 4px;
-}
-
-.detailsColumn {
-  padding: 8px 0 0 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.degree {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 6px;
-}
-
-.institution {
-  font-size: 0.95rem;
-  color: #ff8c3a;
-  margin: 0 0 12px;
-  font-weight: 600;
-}
-
-.details {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 16px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .detailItem {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0;
-  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-@media (max-width: 1000px) {
-  .cardMain {
-    grid-template-columns: 1fr;
-  }
+.detailLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffb982;
+}
+
+.detailText {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.educationBadgeRow,
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badgeItem {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  background: rgba(255, 140, 58, 0.05);
+  border: 1px solid rgba(255, 140, 58, 0.15);
+  border-radius: 999px;
+  color: #ffb982;
 }
 
 @media (max-width: 900px) {
@@ -192,32 +132,21 @@
     padding: 40px 28px;
   }
 
+  .cardMain {
+    max-width: 100%;
+  }
+
   .sectionNumber {
     font-size: 3rem;
   }
-}
 
-@media (max-width: 620px) {
-  .timelineEntry {
-    grid-template-columns: 1fr;
-    gap: 8px;
+  .supportBlock {
+    padding-left: 0;
+    border-left: none;
   }
 
-  .durationColumn {
-    justify-content: flex-start;
-  }
-
-  .duration {
-    text-align: left;
-  }
-
-  .dividerColumn {
-    display: none;
-  }
-
-  .detailsColumn {
-    padding: 12px 0 0;
-    border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  .highlightText,
+  .detailText {
+    font-size: 1rem;
   }
 }

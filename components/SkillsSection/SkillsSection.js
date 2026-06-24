@@ -11,6 +11,21 @@ const SKILL_LABELS = [
   'TypeScript',
 ];
 
+const SKILL_PILLARS = [
+  {
+    label: 'Modern UI',
+    description: 'Component-driven interfaces with polished motion, accessibility, and performance.',
+  },
+  {
+    label: 'Reliable Backend',
+    description: 'API-first services, database design, and deployment-ready infrastructure.',
+  },
+  {
+    label: 'AI Integration',
+    description: 'Machine learning features, intelligent workflows, and data-focused experiences.',
+  },
+];
+
 export default function SkillsSection() {
   return (
     <section className={styles.skillsSection} id="skills-section">
@@ -32,7 +47,16 @@ export default function SkillsSection() {
             applications, API-first services, and AI-ready data experiences.
           </p>
 
-          <div className={styles.skillRow}>
+          <div className={styles.supportBlock}>
+            {SKILL_PILLARS.map((pillar) => (
+              <div key={pillar.label} className={styles.detailItem}>
+                <span className={styles.detailLabel}>{pillar.label}</span>
+                <span className={styles.detailText}>{pillar.description}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.badgeRow}>
             {SKILL_LABELS.map((label) => (
               <span key={label} className={styles.skillTag}>
                 {label}
