@@ -130,6 +130,8 @@
   flex-direction: column;
   gap: 8px;
   padding-top: 4px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .degreeTitle {
@@ -154,7 +156,7 @@
   color: rgba(255, 255, 255, 0.72);
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .label {
@@ -199,6 +201,10 @@
     gap: 16px;
   }
 
+  .timelineContent {
+    padding-left: 20px;
+  }
+
   .year {
     font-size: 0.85rem;
   }
@@ -238,6 +244,10 @@
   .timelineItem {
     grid-template-columns: 70px 30px 1fr;
     gap: 12px;
+  }
+
+  .timelineContent {
+    padding-left: 14px;
   }
 
   .year {
