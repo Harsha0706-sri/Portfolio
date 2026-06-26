@@ -12,12 +12,13 @@ const PROJECTS = [
     id: 1,
     title: 'AI Interview Preparation Platform',
     description:
-      'An AI-powered interview preparation platform that provides mock interviews, coding assessments, AI-generated questions, performance analytics, and personalized feedback.',
+      'AI-powered interview preparation platform currently under development. The platform is being built to provide AI mock interviews, coding assessments, intelligent performance analytics, personalized feedback, and real-time interview simulations.',
     stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'OpenAI/Gemini APIs', 'Judge0'],
     features: ['AI mock interviews', 'Coding assessments', 'Performance analytics', 'Real-time evaluation'],
     accent: 'AI INTERVIEW',
     githubUrl: 'https://github.com/reddy615',
     liveUrl: '#',
+    status: 'in-progress',
   },
   {
     id: 2,
@@ -134,10 +135,14 @@ export default function ProjectsSection() {
                 <div className={styles.infoRow}>
                   <h3 className={styles.showcaseTitle}>{project.title}</h3>
                   <p className={styles.showcaseDesc}>
-                    {project.id === 2
-                      ? 'Full-stack resort booking platform with modern UI, room management, inquiry handling and deployment.'
-                      : 'AI-powered interview preparation platform with mock interviews, coding assessments and personalized feedback.'}
+                    {project.description}
                   </p>
+
+                  {project.status === 'in-progress' && (
+                    <div className={styles.statusBadge}>
+                      🚧 Currently in Development
+                    </div>
+                  )}
 
                   <div className={styles.techHeading}>TECH STACK</div>
                   <div className={styles.badgeRow}>
@@ -152,7 +157,31 @@ export default function ProjectsSection() {
                     <a className={styles.primaryButton} href={project.githubUrl} target="_blank" rel="noreferrer">
                       GitHub
                     </a>
-                    {project.id === 2 ? (
+                    {project.status === 'in-progress' ? (
+                      <div
+                        className={styles.secondaryButton}
+                        style={{
+                          opacity: 0.7,
+                          cursor: 'default',
+                          pointerEvents: 'none',
+                        }}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                          style={{ marginRight: 8, flexShrink: 0 }}
+                        >
+                          <path
+                            d="M6 4h12v2H6V4zm1 4h2v8H7V8zm4 0h2v8h-2V8zm4 0h2v8h-2V8zm-8 10h12v2H6v-2z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                        IN PROGRESS
+                      </div>
+                    ) : project.id === 2 ? (
                       <a
                         className={styles.secondaryButton}
                         href={project.liveUrl}

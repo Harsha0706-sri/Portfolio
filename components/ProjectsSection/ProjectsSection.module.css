@@ -166,6 +166,23 @@
   color: #ff8c3a;
 }
 
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: rgba(255, 140, 58, 0.08);
+  border: 1px solid rgba(255, 140, 58, 0.3);
+  border-radius: 999px;
+  color: #ffb982;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
 .badgeRow {
   display: flex;
   flex-wrap: wrap;
