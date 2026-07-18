@@ -10,12 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 const CONTACT_DETAILS = [
   {
     label: 'Email',
-    value: '2300090002csit@gmail.com',
-    href: 'mailto:2300090002csit@gmail.com',
+    value: '2300090083csit@gmail.com',
+    href: 'mailto:2300090083csit@gmail.com',
   },
   {
     label: 'Location',
-    value: '📍 Nunna, Vijayawada, Andhra Pradesh, India',
+    value: '📍 Guntur,Andhra Pradesh, India',
   },
   {
     label: 'Status',
@@ -121,7 +121,7 @@ export default function ContactSection() {
                     built with a focus on performance, quality, and innovation.
                   </p>
                   <a
-                    href="https://github.com/reddy615"
+                    href="https://github.com/Harsha0706-sri"
                     className={styles.featureLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,7 +129,7 @@ export default function ContactSection() {
                     <span className={styles.externalIcon} aria-hidden="true">
                       <ExternalLinkIcon />
                     </span>
-                    github.com/reddy615
+                    github.com/Harsha0706-sri
                   </a>
                 </article>
 
@@ -141,11 +141,11 @@ export default function ContactSection() {
                     <h3 className={styles.featureTitle}>LinkedIn</h3>
                   </div>
                   <p className={styles.featureDescription}>
-                    Let's connect to discuss software engineering, full-stack development, artificial intelligence,
-                    innovative technologies, and exciting opportunities to build impactful digital solutions.
+                    Let's connect to discuss Data Science, Big Data Analytics, Machine Learning, Cloud Computing, and innovative data-driven solutions.
+                    I'm always eager to collaborate on exciting projects, exchange ideas, and explore opportunities that create meaningful impact through technology.
                   </p>
                   <a
-                    href="https://www.linkedin.com/in/akshayreddy-polareddy-42664b399/"
+                    href="https://www.linkedin.com/in/k-sri-harsha-vardhan-88603a301/"
                     className={styles.featureLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -153,7 +153,7 @@ export default function ContactSection() {
                     <span className={styles.externalIcon} aria-hidden="true">
                       <ExternalLinkIcon />
                     </span>
-                    linkedin.com/in/akshayreddy-polareddy-42664b399
+                    linkedin.com/in/k-sri-harsha-vardhan-88603a301
                   </a>
                 </article>
 
