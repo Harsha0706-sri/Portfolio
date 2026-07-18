@@ -11,25 +11,25 @@ gsap.registerPlugin(ScrollTrigger);
 const PROJECTS = [
   {
     id: 1,
-    title: 'AI Interview System',
+    title: 'Analysis of Clothing Reviews',
     description:
-      'An intelligent interview practice platform focused on guided preparation, structured feedback, and a polished user experience for candidates.',
-    image: '/ai-interview-screenshot.png',
-    imageAlt: 'AI Interview System project screenshot',
-    details: ['AI-assisted preparation', 'Interactive UI', 'Modern web workflow'],
-    tech: ['Next.js', 'React', 'GSAP'],
-    href: 'https://github.com/reddy615',
+      'Developed a sentiment analysis application that analyzes customer clothing reviews using Natural Language Processing to classify reviews into Positive, Negative, and Neutral sentiments.',
+    image: '/clothing-reviews-photo.png',
+    imageAlt: 'Analysis of Clothing Reviews project screenshot',
+    details: ['Sentiment analysis', 'NLP implementation', 'Data visualization','Customer Review Dashboard','Interactive Charts'],
+    tech: ['Spring Boot', 'React', 'MySQL', 'Python', 'NLP'],
+    href: 'https://github.com/Harsha0706-sri/style-sentiment-main.git',
   },
   {
     id: 2,
-    title: 'Doctors Farms',
+    title: 'Car Rental System',
     description:
-      'A clean commerce-style experience for a product-focused brand, built to present content clearly and keep the interface responsive.',
-    image: '/doctors-farms-screenshot.png',
-    imageAlt: 'Doctors Farms project screenshot',
-    details: ['Brand showcase', 'Responsive layout', 'Content-first design'],
-    tech: ['React', 'CSS Modules', 'Next.js'],
-    href: 'https://github.com/reddy615',
+      'Developed a full-stack Car Rental System that enables users to browse vehicles, book rentals, manage reservations, and securely authenticate user accounts.',
+    image: '/car-rental-system-photo.png',
+    imageAlt: 'Car Rental System project screenshot',
+    details: ['Vehicle Booking', 'Rental Management', 'User Authentication', 'Responsive Dashboard'],
+    tech: ['Spring Boot', 'React', 'MySQL', 'REST APIs'],
+    href: 'https://github.com/Harsha0706-sri/car-rental-system.git',
   },
 ];
 
