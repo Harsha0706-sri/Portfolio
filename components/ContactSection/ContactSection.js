@@ -202,10 +202,11 @@ export default function ContactSection() {
 
             <aside className={styles.availabilityPanel}>
               <div className={styles.availabilityTop}>AVAILABLE FOR OPPORTUNITIES</div>
-              <div className={styles.availabilityBody}>Full Stack Developer</div>
-              <div className={styles.availabilityBody}>AI Enthusiast</div>
-              <div className={styles.availabilityBody}>MERN Stack</div>
-              <div className={styles.availabilityBody}>React • Node • MongoDB</div>
+              <div className={styles.availabilityBody}>Data Science</div>
+              <div className={styles.availabilityBody}>Big Data Analytics</div>
+              <div className={styles.availabilityBody}>Data Engineering</div>
+              <div className={styles.availabilityBody}>Cloud Analytics</div>
+              <div className={styles.availabilityBody}>Python • SQL • Hadoop • Spark • Azure • Power BI</div>
             </aside>
           </div>
         </div>

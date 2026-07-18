@@ -50,11 +50,11 @@ const CinematicLayer = () => {
       const ctx = canvas.getContext('2d');
 
       const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.15, 'rgba(255, 255, 255, 0.9)');
-      gradient.addColorStop(0.4, 'rgba(255, 160, 80, 0.3)');  // warm glowing aura
-      gradient.addColorStop(0.7, 'rgba(255, 100, 30, 0.05)'); // very soft edge
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(0, 'rgba(248, 250, 252, 1)');
+      gradient.addColorStop(0.15, 'rgba(203, 213, 225, 0.9)');
+      gradient.addColorStop(0.4, 'rgba(37, 99, 235, 0.28)');
+      gradient.addColorStop(0.7, 'rgba(56, 189, 248, 0.05)');
+      gradient.addColorStop(1, 'rgba(248, 250, 252, 0)');
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, size, size);
@@ -76,11 +76,11 @@ const CinematicLayer = () => {
 
     const particlesData = [];
     const colorPalette = [
-      new THREE.Color('#ffffff'), // White
-      new THREE.Color('#ffe8d1'), // Soft warm white
-      new THREE.Color('#ffaa66'), // Soft orange
-      new THREE.Color('#ff7d3b'), // Deeper orange
-      new THREE.Color('#ffb982'), // Bright amber
+      new THREE.Color('#F8FAFC'),
+      new THREE.Color('#CBD5E1'),
+      new THREE.Color('#38BDF8'),
+      new THREE.Color('#2563EB'),
+      new THREE.Color('#60A5FA'),
     ];
 
     for (let i = 0; i < particleCount; i++) {

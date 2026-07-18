@@ -1,6 +1,13 @@
 :root {
-  --background: #050508;
-  --foreground: #ffffff;
+  --background: #09090B;
+  --surface: #18181B;
+  --primary-accent: #2563EB;
+  --secondary-accent: #38BDF8;
+  --heading: #F8FAFC;
+  --body-text: #CBD5E1;
+  --border: #334155;
+  --hover: #60A5FA;
+  --foreground: #F8FAFC;
 }
 
 html {
@@ -23,18 +30,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050508;
+  background: #09090B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 140, 58, 0.15);
+  background: rgba(37, 99, 235, 0.18);
   border-radius: 4px;
-  border: 2px solid #050508;
+  border: 2px solid #09090B;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 140, 58, 0.4);
+  background: rgba(56, 189, 248, 0.35);
 }
 
 /* Base resets */

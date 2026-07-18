@@ -14,7 +14,7 @@ const PROJECTS = [
     title: 'Analysis of Clothing Reviews',
     description:
       'Developed a sentiment analysis application that analyzes customer clothing reviews using Natural Language Processing to classify reviews into Positive, Negative, and Neutral sentiments.',
-    image: '/clothing-reviews-photo.png',
+    image: '/clothing-review-photo.jpg',
     imageAlt: 'Analysis of Clothing Reviews project screenshot',
     details: ['Sentiment analysis', 'NLP implementation', 'Data visualization','Customer Review Dashboard','Interactive Charts'],
     tech: ['Spring Boot', 'React', 'MySQL', 'Python', 'NLP'],
@@ -25,7 +25,7 @@ const PROJECTS = [
     title: 'Car Rental System',
     description:
       'Developed a full-stack Car Rental System that enables users to browse vehicles, book rentals, manage reservations, and securely authenticate user accounts.',
-    image: '/car-rental-system-photo.png',
+    image: '/car-rental-system-photos.jpg',
     imageAlt: 'Car Rental System project screenshot',
     details: ['Vehicle Booking', 'Rental Management', 'User Authentication', 'Responsive Dashboard'],
     tech: ['Spring Boot', 'React', 'MySQL', 'REST APIs'],
