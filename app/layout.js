@@ -8,12 +8,16 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "P. Akshay Reddy | Full Stack Developer",
-  description: "Portfolio of P. Akshay Reddy, Full Stack Developer and AI Enthusiast.",
+  title: {
+    default: "K Sri Harsha Vardhan",
+    template: "%s | Data Science & Big Data Analytics",
+  },
+  description: "Portfolio of K Sri Harsha Vardhan showcasing projects in Data Science, Big Data Analytics, Azure, Power BI, Java, Spring Boot, and Full Stack Development.",
   metadataBase: process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL) : new URL('http://localhost:3000'),
+  manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "P. Akshay Reddy | Full Stack Developer",
-    description: "Portfolio of P. Akshay Reddy, Full Stack Developer and AI Enthusiast.",
+    title: "K Sri Harsha Vardhan | Data Science & Big Data Analytics",
+    description: "Portfolio of K Sri Harsha Vardhan showcasing projects in Data Science, Big Data Analytics, Azure, Power BI, Java, Spring Boot, and Full Stack Development.",
     type: "website",
     locale: "en_US",
     images: [
@@ -26,7 +30,9 @@ export const metadata = {
     ]
   },
   twitter: {
-    card: "summary_large_image"
+      card: "summary_large_image",
+      title: "K Sri Harsha Vardhan | Data Science & Big Data Analytics",
+      description: "Portfolio of K Sri Harsha Vardhan showcasing projects in Data Science, Big Data Analytics, Azure, Power BI, Java, Spring Boot, and Full Stack Development.",
   },
   icons: {
     icon: "/favicon.ico"

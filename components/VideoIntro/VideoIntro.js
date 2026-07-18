@@ -273,7 +273,7 @@ const VideoIntro = () => {
         <div className={styles.mainSection}>
             <div className={styles.openWorkBadge}>OPEN TO WORK</div>
           <div className={styles.titleContainer}>
-            <h1 className={styles.titleLine}>K.SRI</h1>
+            <h1 className={styles.titleLine}>K SRI</h1>
           </div>
           <div className={styles.titleContainer}>
             <h1 className={`${styles.titleLine} ${styles.accentText}`}>HARSHA VARDHAN</h1>
