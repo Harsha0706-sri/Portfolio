@@ -273,24 +273,24 @@ const VideoIntro = () => {
         <div className={styles.mainSection}>
             <div className={styles.openWorkBadge}>OPEN TO WORK</div>
           <div className={styles.titleContainer}>
-            <h1 className={styles.titleLine}>K.</h1>
+            <h1 className={styles.titleLine}>K.SRI</h1>
           </div>
           <div className={styles.titleContainer}>
-            <h1 className={`${styles.titleLine} ${styles.accentText}`}>HARSHA</h1>
+            <h1 className={`${styles.titleLine} ${styles.accentText}`}>HARSHA VARDHAN</h1>
           </div>
           <div className={styles.designation}>
-            SOFTWARE ENGINEER • FULL STACK DEVELOPER
+            DATA SCIENCE • BIG DATA ANALYTICS
           </div>
 
           <div className={styles.heroBadges}>
-            <span className={styles.heroBadge}>React</span>
-            <span className={styles.heroBadge}>Node.js</span>
-            <span className={styles.heroBadge}>Express.js</span>
-            <span className={styles.heroBadge}>MongoDB</span>
-            <span className={styles.heroBadge}>JavaScript</span>
-            <span className={styles.heroBadge}>Git</span>
-            <span className={styles.heroBadge}>GitHub</span>
-            <span className={styles.heroBadge}>AI/ML</span>
+            <span className={styles.heroBadge}>Python</span>
+            <span className={styles.heroBadge}>Java</span>
+            <span className={styles.heroBadge}>SQL</span>
+            <span className={styles.heroBadge}>Apache Hadoop</span>
+            <span className={styles.heroBadge}>Apache Spark</span>
+            <span className={styles.heroBadge}>Microsoft Azure</span>
+            <span className={styles.heroBadge}>Power BI</span>
+            <span className={styles.heroBadge}>Machine Learning</span>
           </div>
 
           <div className={styles.heroButtons}>

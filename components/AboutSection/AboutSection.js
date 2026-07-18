@@ -7,7 +7,7 @@ import styles from './AboutSection.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ABOUT_BADGES = ['FULL STACK', 'AI/ML', 'REACT', 'NODE.JS', 'MONGODB', 'CLOUD'];
+const ABOUT_BADGES = ['DATA SCIENCE', 'BIG DATA', 'PYTHON', 'HADOOP', 'SPARK', 'AZURE', 'POWER BI'];
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
@@ -50,7 +50,7 @@ export default function AboutSection() {
           <header className={styles.header}>
             <div className={styles.tagline}>About Profile</div>
             <h2 id="about-title" className={styles.title}>
-              Who I Am
+              Who  I  Am
             </h2>
           </header>
 
@@ -73,7 +73,7 @@ export default function AboutSection() {
           </div>
 
           <p className={styles.closingText}>
-            I enjoy solving real-world problems through software engineering and continuously improving my development skills.
+            I enjoy solving real-world problems through data-driven solutions, analyzing large-scale datasets, and building intelligent applications using Data Science, Big Data Analytics, Cloud Computing, and modern software development technologies. I continuously strive to enhance my analytical, programming, and problem-solving skills.
           </p>
 
           <div className={styles.badgeRow}>
