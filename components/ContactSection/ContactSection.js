@@ -179,8 +179,8 @@ export default function ContactSection() {
               </div>
 
               <a
-                href="/resume/2300090002_AkshayReddy.pdf"
-                download="2300090002_AkshayReddy.pdf"
+                href="/resume/2300090083_KSriHarshaVardhan.pdf"
+                download="2300090083_KSriHarshaVardhan.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.downloadButton}

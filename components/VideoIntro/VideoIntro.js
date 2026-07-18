@@ -298,7 +298,7 @@ const VideoIntro = () => {
               VIEW PROJECTS
             </button>
             <a 
-              href="https://github.com/reddy615" 
+              href="https://github.com/Harsha0706-sri" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.secondaryBtn}
