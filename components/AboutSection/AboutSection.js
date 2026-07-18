@@ -55,19 +55,20 @@ export default function AboutSection() {
           </header>
 
           <p className={styles.introText}>
-            I am K Sri Harsha Vardhan, a B.Tech student specializing in Data Science and Big Data Analytics. I am passionate about Full Stack Development, Java, Spring Boot, React, Cloud Computing, Artificial Intelligence, and building scalable web applications.
+            I am K Sri Harsha Vardhan, a B.Tech student specializing in Data Science and Big Data Analytics. I am passionate about transforming complex data into meaningful insights, developing intelligent data-driven solutions, and leveraging modern technologies to solve real-world problems. I also have a strong interest in Full Stack Development, Cloud Computing, and building scalable, efficient web applications.
           </p>
 
           <div className={styles.techStackSection}>
             <h3 className={styles.subheading}>Tech Stack</h3>
             <div className={styles.techList}>
-              <span className={styles.techItem}>React</span>
-              <span className={styles.techItem}>Node.js</span>
-              <span className={styles.techItem}>Express.js</span>
+              <span className={styles.techItem}>Python</span>
+              <span className={styles.techItem}>Java</span>
+              <span className={styles.techItem}>SQL</span>
               <span className={styles.techItem}>MongoDB</span>
-              <span className={styles.techItem}>JavaScript</span>
-              <span className={styles.techItem}>Git</span>
-              <span className={styles.techItem}>Cloud Platforms</span>
+              <span className={styles.techItem}>Apache Spark</span>
+              <span className={styles.techItem}>Apache Hadoop</span>
+              <span className={styles.techItem}>Microsoft Azure</span>
+               <span className={styles.techItem}>Power BI</span>
             </div>
           </div>
 
