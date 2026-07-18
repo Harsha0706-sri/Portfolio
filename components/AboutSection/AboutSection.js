@@ -55,7 +55,7 @@ export default function AboutSection() {
           </header>
 
           <p className={styles.introText}>
-            I am P. Akshay Reddy, a B.Tech student specializing in AI Driven Languages and Technologies. I am passionate about Full Stack Development, Artificial Intelligence, and building scalable web applications.
+            I am K Sri Harsha Vardhan, a B.Tech student specializing in Data Science and Big Data Analytics. I am passionate about Full Stack Development, Java, Spring Boot, React, Cloud Computing, Artificial Intelligence, and building scalable web applications.
           </p>
 
           <div className={styles.techStackSection}>
