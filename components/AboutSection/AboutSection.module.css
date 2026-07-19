@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 96px 6%;
-  background: #09090B;
+  background: #050508;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,11 +15,11 @@
   max-width: 1600px;
   min-height: 620px;
   max-height: 900px;
-  background: rgba(24, 24, 27, 0.96);
-  border: 1px solid rgba(51, 65, 85, 0.7);
+  background: rgba(8, 8, 12, 0.96);
+  border: 1px solid rgba(255, 180, 100, 0.18);
   border-radius: 32px;
   padding: 48px 60px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), 0 0 28px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), 0 0 28px rgba(255, 140, 60, 0.12);
   display: flex;
   align-items: flex-start;
 }
@@ -33,7 +33,7 @@
 
 .header {
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(51, 65, 85, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sectionNumber {
@@ -42,7 +42,7 @@
   right: 32px;
   font-size: 5rem;
   font-weight: 900;
-  color: rgba(37, 99, 235, 0.18);
+  color: rgba(255, 180, 100, 0.18);
   opacity: 0.18;
   line-height: 0.85;
   letter-spacing: -0.05em;
@@ -52,7 +52,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #2563EB;
+  color: #ff8c3a;
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -62,14 +62,14 @@
   font-weight: 900;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #F8FAFC;
+  color: #ffffff;
   margin: 0;
 }
 
 .bioText {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(248, 250, 252, 0.9);
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 400;
   max-width: 72ch;
   margin: 0;
@@ -86,16 +86,16 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   padding: 7px 18px;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.18);
+  background: rgba(255, 140, 58, 0.06);
+  border: 1px solid rgba(255, 140, 58, 0.18);
   border-radius: 999px;
-  color: #60A5FA;
+  color: #ffb982;
 }
 
 .introText {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(248, 250, 252, 0.9);
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 400;
   max-width: 72ch;
   margin: 0;
@@ -106,7 +106,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #2563EB;
+  color: #ff8c3a;
   margin: 0 0 12px 0;
   padding: 0;
 }
@@ -122,7 +122,7 @@
   margin: 0 0 24px 0;
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(248, 250, 252, 0.88);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .projectList li {
@@ -135,7 +135,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #2563EB;
+  color: #ff8c3a;
   font-weight: bold;
 }
 
@@ -154,24 +154,24 @@
 .techItem {
   font-size: 0.95rem;
   padding: 10px 16px;
-  background: rgba(37, 99, 235, 0.06);
-  border: 1px solid rgba(37, 99, 235, 0.14);
+  background: rgba(255, 140, 58, 0.04);
+  border: 1px solid rgba(255, 140, 58, 0.12);
   border-radius: 8px;
-  color: rgba(248, 250, 252, 0.9);
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .techItem:hover {
-  background: rgba(37, 99, 235, 0.1);
-  border-color: rgba(37, 99, 235, 0.24);
-  color: #60A5FA;
+  background: rgba(255, 140, 58, 0.1);
+  border-color: rgba(255, 140, 58, 0.24);
+  color: #ffb982;
 }
 
 .closingText {
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(248, 250, 252, 0.88);
+  color: rgba(255, 255, 255, 0.82);
   font-weight: 400;
   max-width: 72ch;
   margin: 0;
